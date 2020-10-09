@@ -1,0 +1,83 @@
+grammar org.xtext.example.landingpagedsl.LPDSL with org.eclipse.xtext.common.Terminals
+
+generate lPDSL "http://www.xtext.org/example/landingpagedsl/LPDSL"
+
+LandingPage:
+	(pagecomponent+=PageComponent)*
+;	
+
+PageComponent:
+	PageHeader | PageBody | PageFooter
+;
+
+PageFooter:
+	'footer' name=ID '{'
+		(links+=LinkItem)*
+	'}'
+;
+
+LinkItem:
+	'link' name=ID '{'
+		text+=Items
+		link+=URL
+	'}'
+;
+
+URL:
+	name=ID ':' path+=QualifiedPath
+;
+
+QualifiedPath:
+	//https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
+	('http://www.' | 'https://www.' | 'www.')? ID '.' ID ('/' ID)*
+;
+
+PageHeader:
+	'header' name=ID '{'
+		title+=Items
+		(tabs+=TabItems)*
+;
+
+TabItems:
+	name=ID ':' description+=Description
+;
+
+
+PageBody:
+	'body' name=ID '{'
+		(sections+=Sections)*
+	'}'
+;
+
+Sections:
+	Resume | AboutMe
+;
+
+Resume:
+	'resume' name=ID '{'
+		(resumeitems+=Items)*
+	'}'
+;
+
+Items:
+	name=ID ':' description+=Description
+;
+
+Description:
+	name=ID
+;
+
+AboutMe:
+	'aboutme' name=ID '{'
+		picture+=Picture
+		description+=Items
+	'}'
+;
+
+Picture:
+	name=ID ':' imagepath+=ImagePath
+;
+
+ImagePath:
+	ID ('/' ID)* '.' ('jpg' | 'JPG' | 'jpeg' | 'JPEG' | 'png' | 'PNG')
+;
