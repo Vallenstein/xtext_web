@@ -6,7 +6,10 @@ package org.xtext.example.landingpagedsl.validation;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
 import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
+import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
+import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
 import com.google.common.base.Objects;
 /**
@@ -17,10 +20,25 @@ import com.google.common.base.Objects;
 public class LPDSLValidator extends AbstractLPDSLValidator {
 	
 //TODO: path in image is correct format path, same for link in link
-//TODO: all tab names corresponds to a section name
 	
-	
+	//TODO: all tab names corresponds to a section name
 	public static final String INVALID_NAME = "invalidName";
+	
+	@Check
+	public void tabHasSection (PageHeader header, PageBody body) {
+		for (TabItems tab : header.getTabs()) {
+			int counter = 0;
+			String tabName = tab.getName();
+			for (Sections section : body.getSections()) {
+				if (tabName == section.getName()) {
+					++counter;
+				}
+			}
+			if (counter != 1) {
+				error("you fucked up, Each Tab has to have exactly one corresponding tab!", LPDSLPackage.Literals.SECTIONS__NAME);
+			}
+		}
+	}
 	
 	@Check
 	public void tabCapitalLetter(TabItems tab) {
