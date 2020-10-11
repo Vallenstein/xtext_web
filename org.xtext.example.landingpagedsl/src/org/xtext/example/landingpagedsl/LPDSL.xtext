@@ -82,5 +82,4 @@ Picture:
 ImagePath:
 	value=STRING
 	//STRING ('/' STRING)* '.' ('jpg'|'JPG'|'jpeg'|'JPEG'|'png'|'PNG')
-	
 ;
