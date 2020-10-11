@@ -22,7 +22,10 @@
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//URL">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//URL/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//URL/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//URL/path"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//QualifiedPath">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//QualifiedPath/value"/>
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//PageHeader">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//PageHeader/title"/>
@@ -54,7 +57,10 @@
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//Picture">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Picture/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Picture/imagepath"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//Picture/imagepath"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//ImagePath">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//ImagePath/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

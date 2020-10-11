@@ -109,3 +109,102 @@
 [2020-10-09 13:52:05] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
 [2020-10-09 13:52:05] Performing Preference /instance/org.eclipse.core.resources/encoding
 [2020-10-09 13:52:05] 
+[2020-10-11 00:09:48] Executing startup tasks
+[2020-10-11 00:09:48] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:09:48] Product self.product.version
+[2020-10-11 00:09:48] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:09:48] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:09:48] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:09:48] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:09:48] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:09:49] 
+[2020-10-11 00:12:15] Executing startup tasks
+[2020-10-11 00:12:15] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:12:15] Product self.product.version
+[2020-10-11 00:12:15] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:12:15] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:12:15] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:12:15] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:12:15] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:12:15] 
+[2020-10-11 00:16:31] Executing startup tasks
+[2020-10-11 00:16:31] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:16:31] Product self.product.version
+[2020-10-11 00:16:31] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:16:31] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:16:31] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:16:31] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:16:31] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:16:31] 
+[2020-10-11 00:24:19] Executing startup tasks
+[2020-10-11 00:24:20] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:24:20] Product self.product.version
+[2020-10-11 00:24:20] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:24:20] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:24:20] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:24:20] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:24:20] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:24:20] 
+[2020-10-11 00:26:24] Executing startup tasks
+[2020-10-11 00:26:24] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:26:24] Product self.product.version
+[2020-10-11 00:26:24] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:26:24] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:26:24] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:26:24] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:26:25] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:26:25] 
+[2020-10-11 00:31:36] Executing startup tasks
+[2020-10-11 00:31:36] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:31:36] Product self.product.version
+[2020-10-11 00:31:36] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:31:36] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:31:36] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:31:36] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:31:36] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:31:36] 
+[2020-10-11 00:32:35] Executing startup tasks
+[2020-10-11 00:32:35] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:32:35] Product self.product.version
+[2020-10-11 00:32:35] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:32:35] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:32:35] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:32:35] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:32:35] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:32:35] 
+[2020-10-11 00:34:33] Executing startup tasks
+[2020-10-11 00:34:33] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:34:33] Product self.product.version
+[2020-10-11 00:34:33] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:34:33] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:34:33] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:34:33] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:34:33] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:34:33] 
+[2020-10-11 00:37:19] Executing startup tasks
+[2020-10-11 00:37:19] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:37:19] Product self.product.version
+[2020-10-11 00:37:19] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:37:19] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:37:19] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:37:19] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:37:19] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:37:19] 
+[2020-10-11 00:39:28] Executing startup tasks
+[2020-10-11 00:39:28] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:39:28] Product self.product.version
+[2020-10-11 00:39:28] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:39:28] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:39:28] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:39:28] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:39:28] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:39:28] 
+[2020-10-11 00:43:57] Executing startup tasks
+[2020-10-11 00:43:57] Java(TM) SE Runtime Environment 13.0.2+8
+[2020-10-11 00:43:57] Product self.product.version
+[2020-10-11 00:43:57] Workspace C:\Users\stein\OneDrive\Desktop\HR\2020_haust\MDSE\runtime-EclipseXtext
+[2020-10-11 00:43:57] Bundle org.eclipse.oomph.setup 1.16.0.v20200105-1257, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:43:57] Bundle org.eclipse.oomph.setup.core 1.16.0.v20200110-0857, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:43:57] Bundle org.eclipse.oomph.setup.p2 1.14.0.v20200102-0955, build=4498, branch=38f2c890a1185b53e8030f8fc331e19b6a71efe6
+[2020-10-11 00:43:57] Performing Preference /instance/org.eclipse.core.resources/encoding
+[2020-10-11 00:43:57] 

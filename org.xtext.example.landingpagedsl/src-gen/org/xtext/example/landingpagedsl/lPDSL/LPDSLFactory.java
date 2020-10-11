@@ -69,6 +69,15 @@ public interface LPDSLFactory extends EFactory
   URL createURL();
 
   /**
+   * Returns a new object of class '<em>Qualified Path</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualified Path</em>'.
+   * @generated
+   */
+  QualifiedPath createQualifiedPath();
+
+  /**
    * Returns a new object of class '<em>Page Header</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,6 +157,15 @@ public interface LPDSLFactory extends EFactory
    * @generated
    */
   Picture createPicture();
+
+  /**
+   * Returns a new object of class '<em>Image Path</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Image Path</em>'.
+   * @generated
+   */
+  ImagePath createImagePath();
 
   /**
    * Returns the package supported by this factory.

@@ -49,15 +49,15 @@ public interface URL extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Path</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Path</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Path</em>' attribute list.
+   * @return the value of the '<em>Path</em>' containment reference list.
    * @see org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage#getURL_Path()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getPath();
+  EList<QualifiedPath> getPath();
 
 } // URL

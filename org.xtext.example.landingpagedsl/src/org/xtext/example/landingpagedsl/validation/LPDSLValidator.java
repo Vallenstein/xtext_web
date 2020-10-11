@@ -16,7 +16,7 @@ import com.google.common.base.Objects;
  */
 public class LPDSLValidator extends AbstractLPDSLValidator {
 	
-//TODO: one body body, one body header, one body footer
+//TODO: path in image is correct format path, same for link in link
 //TODO: all tab names corresponds to a section name
 	
 	
@@ -35,16 +35,38 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 	public void checkOnePageBody(LandingPage page) {
 		int check = 0;
 		for(PageComponent component : page.getPagecomponent()) {
-			System.out.println(component.getClass().getSimpleName().toString());
-			System.out.println(component.getClass().getSimpleName().toString() == "PageBodyImpl");
-			if (component.getClass().getSimpleName().toString() == "PageBodyImpl") {
+			if (component.getClass().getSimpleName().toString().equals("PageBodyImpl")) {
 				check += 1;
 			}
-			System.out.println(check);
 		}
-		System.out.println(check);
 		if(check > 1) {
-			error("There can only be one body section in your landing page", LPDSLPackage.Literals.PAGE_COMPONENT__NAME);
+			error("There can only be one body section in your landing page", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
+		}
+	}
+	
+	@Check
+	public void checkOnePageHeader(LandingPage page) {
+		int check = 0;
+		for(PageComponent component : page.getPagecomponent()) {
+			if (component.getClass().getSimpleName().toString().equals("PageHeaderImpl")) {
+				check += 1;
+			}
+		}
+		if(check > 1) {
+			error("There can only be one header section in your landing page", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
+		}
+	}
+	
+	@Check
+	public void checkOnePageFooter(LandingPage page) {
+		int check = 0;
+		for(PageComponent component : page.getPagecomponent()) {
+			if (component.getClass().getSimpleName().toString().equals("PageFooterImpl")) {
+				check += 1;
+			}
+		}
+		if(check > 1) {
+			error("There can only be one footer section in your landing page", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
 		}
 	}
 }

@@ -357,14 +357,14 @@ ruleURL returns [EObject current=null]
 ;
 
 // Entry rule entryRuleQualifiedPath
-entryRuleQualifiedPath returns [String current=null]:
+entryRuleQualifiedPath returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getQualifiedPathRule()); }
 	iv_ruleQualifiedPath=ruleQualifiedPath
-	{ $current=$iv_ruleQualifiedPath.current.getText(); }
+	{ $current=$iv_ruleQualifiedPath.current; }
 	EOF;
 
 // Rule QualifiedPath
-ruleQualifiedPath returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleQualifiedPath returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -373,57 +373,31 @@ ruleQualifiedPath returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 }:
 	(
 		(
-			kw='http://www.'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getHttpWwwKeyword_0_0());
-			}
-			    |
-			kw='https://www.'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getHttpsWwwKeyword_0_1());
-			}
-			    |
-			kw='www.'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getWwwKeyword_0_2());
-			}
-		)?
-		this_ID_3=RULE_ID
-		{
-			$current.merge(this_ID_3);
-		}
-		{
-			newLeafNode(this_ID_3, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_1());
-		}
+			(
+				lv_value_0_0=RULE_STRING
+				{
+					newLeafNode(lv_value_0_0, grammarAccess.getQualifiedPathAccess().getValueSTRINGTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getQualifiedPathRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_0_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 		(
-			kw='.'
+			otherlv_1='.'
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getFullStopKeyword_2_0());
+				newLeafNode(otherlv_1, grammarAccess.getQualifiedPathAccess().getFullStopKeyword_1_0());
 			}
-			this_ID_5=RULE_ID
+			this_STRING_2=RULE_STRING
 			{
-				$current.merge(this_ID_5);
-			}
-			{
-				newLeafNode(this_ID_5, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_2_1());
-			}
-		)*
-		(
-			kw='/'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getQualifiedPathAccess().getSolidusKeyword_3_0());
-			}
-			this_ID_7=RULE_ID
-			{
-				$current.merge(this_ID_7);
-			}
-			{
-				newLeafNode(this_ID_7, grammarAccess.getQualifiedPathAccess().getIDTerminalRuleCall_3_1());
+				newLeafNode(this_STRING_2, grammarAccess.getQualifiedPathAccess().getSTRINGTerminalRuleCall_1_1());
 			}
 		)*
 	)
@@ -991,14 +965,14 @@ rulePicture returns [EObject current=null]
 ;
 
 // Entry rule entryRuleImagePath
-entryRuleImagePath returns [String current=null]:
+entryRuleImagePath returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getImagePathRule()); }
 	iv_ruleImagePath=ruleImagePath
-	{ $current=$iv_ruleImagePath.current.getText(); }
+	{ $current=$iv_ruleImagePath.current; }
 	EOF;
 
 // Rule ImagePath
-ruleImagePath returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleImagePath returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1006,67 +980,20 @@ ruleImagePath returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 	leaveRule();
 }:
 	(
-		this_ID_0=RULE_ID
-		{
-			$current.merge(this_ID_0);
-		}
-		{
-			newLeafNode(this_ID_0, grammarAccess.getImagePathAccess().getIDTerminalRuleCall_0());
-		}
 		(
-			kw='/'
+			lv_value_0_0=RULE_STRING
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getImagePathAccess().getSolidusKeyword_1_0());
-			}
-			this_ID_2=RULE_ID
-			{
-				$current.merge(this_ID_2);
+				newLeafNode(lv_value_0_0, grammarAccess.getImagePathAccess().getValueSTRINGTerminalRuleCall_0());
 			}
 			{
-				newLeafNode(this_ID_2, grammarAccess.getImagePathAccess().getIDTerminalRuleCall_1_1());
-			}
-		)*
-		kw='.'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getImagePathAccess().getFullStopKeyword_2());
-		}
-		(
-			kw='jpg'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getImagePathAccess().getJpgKeyword_3_0());
-			}
-			    |
-			kw='JPG'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getImagePathAccess().getJPGKeyword_3_1());
-			}
-			    |
-			kw='jpeg'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getImagePathAccess().getJpegKeyword_3_2());
-			}
-			    |
-			kw='JPEG'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getImagePathAccess().getJPEGKeyword_3_3());
-			}
-			    |
-			kw='png'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getImagePathAccess().getPngKeyword_3_4());
-			}
-			    |
-			kw='PNG'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getImagePathAccess().getPNGKeyword_3_5());
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getImagePathRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"value",
+					lv_value_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
 			}
 		)
 	)

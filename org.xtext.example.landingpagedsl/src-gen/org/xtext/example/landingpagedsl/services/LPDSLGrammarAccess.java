@@ -185,57 +185,35 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class QualifiedPathElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.QualifiedPath");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cHttpWwwKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cHttpsWwwKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final Keyword cWwwKeyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cSolidusKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedPath:
-		//	('http://www.' | 'https://www.' | 'www.')? ID ('.' ID)* ('/' ID)*;
+		//	value=STRING ('.' STRING)*
+		//	//('http://www.' | 'https://www.' | 'www.')? STRING ('.' STRING)+ ('/' STRING)*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('http://www.' | 'https://www.' | 'www.')? ID ('.' ID)* ('/' ID)*
+		//value=STRING ('.' STRING)*
 		public Group getGroup() { return cGroup; }
 		
-		//('http://www.' | 'https://www.' | 'www.')?
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		//value=STRING
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
 		
-		//'http://www.'
-		public Keyword getHttpWwwKeyword_0_0() { return cHttpWwwKeyword_0_0; }
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0_0() { return cValueSTRINGTerminalRuleCall_0_0; }
 		
-		//'https://www.'
-		public Keyword getHttpsWwwKeyword_0_1() { return cHttpsWwwKeyword_0_1; }
-		
-		//'www.'
-		public Keyword getWwwKeyword_0_2() { return cWwwKeyword_0_2; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
-		
-		//('.' ID)*
-		public Group getGroup_2() { return cGroup_2; }
+		//('.' STRING)*
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_2_0() { return cFullStopKeyword_2_0; }
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 		
-		//ID
-		public RuleCall getIDTerminalRuleCall_2_1() { return cIDTerminalRuleCall_2_1; }
-		
-		//('/' ID)*
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'/'
-		public Keyword getSolidusKeyword_3_0() { return cSolidusKeyword_3_0; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_3_1() { return cIDTerminalRuleCall_3_1; }
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_1_1() { return cSTRINGTerminalRuleCall_1_1; }
 	}
 	public class PageHeaderElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.PageHeader");
@@ -548,62 +526,20 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class ImagePathElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.ImagePath");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cSolidusKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Keyword cJpgKeyword_3_0 = (Keyword)cAlternatives_3.eContents().get(0);
-		private final Keyword cJPGKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
-		private final Keyword cJpegKeyword_3_2 = (Keyword)cAlternatives_3.eContents().get(2);
-		private final Keyword cJPEGKeyword_3_3 = (Keyword)cAlternatives_3.eContents().get(3);
-		private final Keyword cPngKeyword_3_4 = (Keyword)cAlternatives_3.eContents().get(4);
-		private final Keyword cPNGKeyword_3_5 = (Keyword)cAlternatives_3.eContents().get(5);
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//ImagePath:
-		//	ID ('/' ID)* '.' ('jpg' | 'JPG' | 'jpeg' | 'JPEG' | 'png' | 'PNG');
+		//	value=STRING
+		//	//STRING ('/' STRING)* '.' ('jpg'|'JPG'|'jpeg'|'JPEG'|'png'|'PNG')
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID ('/' ID)* '.' ('jpg' | 'JPG' | 'jpeg' | 'JPEG' | 'png' | 'PNG')
-		public Group getGroup() { return cGroup; }
+		//value=STRING
+		public Assignment getValueAssignment() { return cValueAssignment; }
 		
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-		
-		//('/' ID)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'/'
-		public Keyword getSolidusKeyword_1_0() { return cSolidusKeyword_1_0; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
-		
-		//('jpg' | 'JPG' | 'jpeg' | 'JPEG' | 'png' | 'PNG')
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
-		
-		//'jpg'
-		public Keyword getJpgKeyword_3_0() { return cJpgKeyword_3_0; }
-		
-		//'JPG'
-		public Keyword getJPGKeyword_3_1() { return cJPGKeyword_3_1; }
-		
-		//'jpeg'
-		public Keyword getJpegKeyword_3_2() { return cJpegKeyword_3_2; }
-		
-		//'JPEG'
-		public Keyword getJPEGKeyword_3_3() { return cJPEGKeyword_3_3; }
-		
-		//'png'
-		public Keyword getPngKeyword_3_4() { return cPngKeyword_3_4; }
-		
-		//'PNG'
-		public Keyword getPNGKeyword_3_5() { return cPNGKeyword_3_5; }
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
 	
 	
@@ -734,7 +670,9 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//QualifiedPath:
-	//	('http://www.' | 'https://www.' | 'www.')? ID ('.' ID)* ('/' ID)*;
+	//	value=STRING ('.' STRING)*
+	//	//('http://www.' | 'https://www.' | 'www.')? STRING ('.' STRING)+ ('/' STRING)*
+	//;
 	public QualifiedPathElements getQualifiedPathAccess() {
 		return pQualifiedPath;
 	}
@@ -844,7 +782,9 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//ImagePath:
-	//	ID ('/' ID)* '.' ('jpg' | 'JPG' | 'jpeg' | 'JPEG' | 'png' | 'PNG');
+	//	value=STRING
+	//	//STRING ('/' STRING)* '.' ('jpg'|'JPG'|'jpeg'|'JPEG'|'png'|'PNG')
+	//;
 	public ImagePathElements getImagePathAccess() {
 		return pImagePath;
 	}

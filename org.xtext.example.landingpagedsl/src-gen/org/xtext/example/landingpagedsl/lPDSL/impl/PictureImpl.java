@@ -6,16 +6,20 @@ package org.xtext.example.landingpagedsl.lPDSL.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 
@@ -56,14 +60,14 @@ public class PictureImpl extends MinimalEObjectImpl.Container implements Picture
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getImagepath() <em>Imagepath</em>}' attribute list.
+   * The cached value of the '{@link #getImagepath() <em>Imagepath</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getImagepath()
    * @generated
    * @ordered
    */
-  protected EList<String> imagepath;
+  protected EList<ImagePath> imagepath;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,13 +121,29 @@ public class PictureImpl extends MinimalEObjectImpl.Container implements Picture
    * @generated
    */
   @Override
-  public EList<String> getImagepath()
+  public EList<ImagePath> getImagepath()
   {
     if (imagepath == null)
     {
-      imagepath = new EDataTypeEList<String>(String.class, this, LPDSLPackage.PICTURE__IMAGEPATH);
+      imagepath = new EObjectContainmentEList<ImagePath>(ImagePath.class, this, LPDSLPackage.PICTURE__IMAGEPATH);
     }
     return imagepath;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LPDSLPackage.PICTURE__IMAGEPATH:
+        return ((InternalEList<?>)getImagepath()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -160,7 +180,7 @@ public class PictureImpl extends MinimalEObjectImpl.Container implements Picture
         return;
       case LPDSLPackage.PICTURE__IMAGEPATH:
         getImagepath().clear();
-        getImagepath().addAll((Collection<? extends String>)newValue);
+        getImagepath().addAll((Collection<? extends ImagePath>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -217,8 +237,6 @@ public class PictureImpl extends MinimalEObjectImpl.Container implements Picture
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", imagepath: ");
-    result.append(imagepath);
     result.append(')');
     return result.toString();
   }

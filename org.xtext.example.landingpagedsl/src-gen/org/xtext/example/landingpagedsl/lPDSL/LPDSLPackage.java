@@ -216,7 +216,7 @@ public interface LPDSLPackage extends EPackage
   int URL__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Path</b></em>' attribute list.
+   * The feature id for the '<em><b>Path</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -234,6 +234,34 @@ public interface LPDSLPackage extends EPackage
   int URL_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl <em>Qualified Path</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getQualifiedPath()
+   * @generated
+   */
+  int QUALIFIED_PATH = 5;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_PATH__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Qualified Path</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_PATH_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PageHeaderImpl <em>Page Header</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -241,7 +269,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPageHeader()
    * @generated
    */
-  int PAGE_HEADER = 5;
+  int PAGE_HEADER = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -287,7 +315,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getTabItems()
    * @generated
    */
-  int TAB_ITEMS = 6;
+  int TAB_ITEMS = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,7 +352,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPageBody()
    * @generated
    */
-  int PAGE_BODY = 7;
+  int PAGE_BODY = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -361,7 +389,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getSections()
    * @generated
    */
-  int SECTIONS = 8;
+  int SECTIONS = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -389,7 +417,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getResume()
    * @generated
    */
-  int RESUME = 9;
+  int RESUME = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -426,7 +454,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getItems()
    * @generated
    */
-  int ITEMS = 10;
+  int ITEMS = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -463,7 +491,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getDescription()
    * @generated
    */
-  int DESCRIPTION = 11;
+  int DESCRIPTION = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -491,7 +519,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getAboutMe()
    * @generated
    */
-  int ABOUT_ME = 12;
+  int ABOUT_ME = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -537,7 +565,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPicture()
    * @generated
    */
-  int PICTURE = 13;
+  int PICTURE = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -549,7 +577,7 @@ public interface LPDSLPackage extends EPackage
   int PICTURE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Imagepath</b></em>' attribute list.
+   * The feature id for the '<em><b>Imagepath</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -565,6 +593,34 @@ public interface LPDSLPackage extends EPackage
    * @ordered
    */
   int PICTURE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ImagePathImpl <em>Image Path</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.ImagePathImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getImagePath()
+   * @generated
+   */
+  int IMAGE_PATH = 15;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_PATH__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Image Path</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE_PATH_FEATURE_COUNT = 1;
 
 
   /**
@@ -695,15 +751,36 @@ public interface LPDSLPackage extends EPackage
   EAttribute getURL_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.example.landingpagedsl.lPDSL.URL#getPath <em>Path</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.URL#getPath <em>Path</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Path</em>'.
+   * @return the meta object for the containment reference list '<em>Path</em>'.
    * @see org.xtext.example.landingpagedsl.lPDSL.URL#getPath()
    * @see #getURL()
    * @generated
    */
-  EAttribute getURL_Path();
+  EReference getURL_Path();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath <em>Qualified Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Qualified Path</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.QualifiedPath
+   * @generated
+   */
+  EClass getQualifiedPath();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.QualifiedPath#getValue()
+   * @see #getQualifiedPath()
+   * @generated
+   */
+  EAttribute getQualifiedPath_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.PageHeader <em>Page Header</em>}'.
@@ -939,15 +1016,36 @@ public interface LPDSLPackage extends EPackage
   EAttribute getPicture_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.xtext.example.landingpagedsl.lPDSL.Picture#getImagepath <em>Imagepath</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.Picture#getImagepath <em>Imagepath</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Imagepath</em>'.
+   * @return the meta object for the containment reference list '<em>Imagepath</em>'.
    * @see org.xtext.example.landingpagedsl.lPDSL.Picture#getImagepath()
    * @see #getPicture()
    * @generated
    */
-  EAttribute getPicture_Imagepath();
+  EReference getPicture_Imagepath();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.ImagePath <em>Image Path</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Image Path</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ImagePath
+   * @generated
+   */
+  EClass getImagePath();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.ImagePath#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ImagePath#getValue()
+   * @see #getImagePath()
+   * @generated
+   */
+  EAttribute getImagePath_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1079,12 +1177,30 @@ public interface LPDSLPackage extends EPackage
     EAttribute URL__NAME = eINSTANCE.getURL_Name();
 
     /**
-     * The meta object literal for the '<em><b>Path</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Path</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute URL__PATH = eINSTANCE.getURL_Path();
+    EReference URL__PATH = eINSTANCE.getURL_Path();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl <em>Qualified Path</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getQualifiedPath()
+     * @generated
+     */
+    EClass QUALIFIED_PATH = eINSTANCE.getQualifiedPath();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUALIFIED_PATH__VALUE = eINSTANCE.getQualifiedPath_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PageHeaderImpl <em>Page Header</em>}' class.
@@ -1281,12 +1397,30 @@ public interface LPDSLPackage extends EPackage
     EAttribute PICTURE__NAME = eINSTANCE.getPicture_Name();
 
     /**
-     * The meta object literal for the '<em><b>Imagepath</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Imagepath</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PICTURE__IMAGEPATH = eINSTANCE.getPicture_Imagepath();
+    EReference PICTURE__IMAGEPATH = eINSTANCE.getPicture_Imagepath();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ImagePathImpl <em>Image Path</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.ImagePathImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getImagePath()
+     * @generated
+     */
+    EClass IMAGE_PATH = eINSTANCE.getImagePath();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMAGE_PATH__VALUE = eINSTANCE.getImagePath_Value();
 
   }
 

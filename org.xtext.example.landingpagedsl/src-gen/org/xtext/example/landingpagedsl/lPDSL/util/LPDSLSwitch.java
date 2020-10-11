@@ -109,6 +109,13 @@ public class LPDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LPDSLPackage.QUALIFIED_PATH:
+      {
+        QualifiedPath qualifiedPath = (QualifiedPath)theEObject;
+        T result = caseQualifiedPath(qualifiedPath);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LPDSLPackage.PAGE_HEADER:
       {
         PageHeader pageHeader = (PageHeader)theEObject;
@@ -173,6 +180,13 @@ public class LPDSLSwitch<T> extends Switch<T>
       {
         Picture picture = (Picture)theEObject;
         T result = casePicture(picture);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LPDSLPackage.IMAGE_PATH:
+      {
+        ImagePath imagePath = (ImagePath)theEObject;
+        T result = caseImagePath(imagePath);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -256,6 +270,22 @@ public class LPDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseURL(URL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Qualified Path</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qualified Path</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQualifiedPath(QualifiedPath object)
   {
     return null;
   }
@@ -400,6 +430,22 @@ public class LPDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePicture(Picture object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Image Path</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Image Path</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImagePath(ImagePath object)
   {
     return null;
   }

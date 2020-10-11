@@ -49,15 +49,15 @@ public interface Picture extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Imagepath</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Imagepath</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.landingpagedsl.lPDSL.ImagePath}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Imagepath</em>' attribute list.
+   * @return the value of the '<em>Imagepath</em>' containment reference list.
    * @see org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage#getPicture_Imagepath()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getImagepath();
+  EList<ImagePath> getImagepath();
 
 } // Picture

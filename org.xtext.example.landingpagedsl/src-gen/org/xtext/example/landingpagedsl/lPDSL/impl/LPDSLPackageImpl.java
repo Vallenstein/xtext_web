@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.landingpagedsl.lPDSL.AboutMe;
 import org.xtext.example.landingpagedsl.lPDSL.Description;
+import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
 import org.xtext.example.landingpagedsl.lPDSL.Items;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLFactory;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
@@ -22,6 +23,7 @@ import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
+import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
@@ -68,6 +70,13 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   private EClass urlEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qualifiedPathEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,6 +140,13 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   private EClass pictureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass imagePathEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -333,9 +349,31 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getURL_Path()
+  public EReference getURL_Path()
   {
-    return (EAttribute)urlEClass.getEStructuralFeatures().get(1);
+    return (EReference)urlEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getQualifiedPath()
+  {
+    return qualifiedPathEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getQualifiedPath_Value()
+  {
+    return (EAttribute)qualifiedPathEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -586,9 +624,31 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getPicture_Imagepath()
+  public EReference getPicture_Imagepath()
   {
-    return (EAttribute)pictureEClass.getEStructuralFeatures().get(1);
+    return (EReference)pictureEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getImagePath()
+  {
+    return imagePathEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImagePath_Value()
+  {
+    return (EAttribute)imagePathEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -638,7 +698,10 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     urlEClass = createEClass(URL);
     createEAttribute(urlEClass, URL__NAME);
-    createEAttribute(urlEClass, URL__PATH);
+    createEReference(urlEClass, URL__PATH);
+
+    qualifiedPathEClass = createEClass(QUALIFIED_PATH);
+    createEAttribute(qualifiedPathEClass, QUALIFIED_PATH__VALUE);
 
     pageHeaderEClass = createEClass(PAGE_HEADER);
     createEReference(pageHeaderEClass, PAGE_HEADER__TITLE);
@@ -670,7 +733,10 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     pictureEClass = createEClass(PICTURE);
     createEAttribute(pictureEClass, PICTURE__NAME);
-    createEAttribute(pictureEClass, PICTURE__IMAGEPATH);
+    createEReference(pictureEClass, PICTURE__IMAGEPATH);
+
+    imagePathEClass = createEClass(IMAGE_PATH);
+    createEAttribute(imagePathEClass, IMAGE_PATH__VALUE);
   }
 
   /**
@@ -725,7 +791,10 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     initEClass(urlEClass, org.xtext.example.landingpagedsl.lPDSL.URL.class, "URL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getURL_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.example.landingpagedsl.lPDSL.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getURL_Path(), ecorePackage.getEString(), "path", null, 0, -1, org.xtext.example.landingpagedsl.lPDSL.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getURL_Path(), this.getQualifiedPath(), null, "path", null, 0, -1, org.xtext.example.landingpagedsl.lPDSL.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qualifiedPathEClass, QualifiedPath.class, "QualifiedPath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQualifiedPath_Value(), ecorePackage.getEString(), "value", null, 0, 1, QualifiedPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pageHeaderEClass, PageHeader.class, "PageHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPageHeader_Title(), this.getItems(), null, "title", null, 0, -1, PageHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -757,7 +826,10 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     initEClass(pictureEClass, Picture.class, "Picture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPicture_Name(), ecorePackage.getEString(), "name", null, 0, 1, Picture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPicture_Imagepath(), ecorePackage.getEString(), "imagepath", null, 0, -1, Picture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPicture_Imagepath(), this.getImagePath(), null, "imagepath", null, 0, -1, Picture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(imagePathEClass, ImagePath.class, "ImagePath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImagePath_Value(), ecorePackage.getEString(), "value", null, 0, 1, ImagePath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -70,6 +70,7 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
       case LPDSLPackage.PAGE_FOOTER: return createPageFooter();
       case LPDSLPackage.LINK_ITEM: return createLinkItem();
       case LPDSLPackage.URL: return createURL();
+      case LPDSLPackage.QUALIFIED_PATH: return createQualifiedPath();
       case LPDSLPackage.PAGE_HEADER: return createPageHeader();
       case LPDSLPackage.TAB_ITEMS: return createTabItems();
       case LPDSLPackage.PAGE_BODY: return createPageBody();
@@ -79,6 +80,7 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
       case LPDSLPackage.DESCRIPTION: return createDescription();
       case LPDSLPackage.ABOUT_ME: return createAboutMe();
       case LPDSLPackage.PICTURE: return createPicture();
+      case LPDSLPackage.IMAGE_PATH: return createImagePath();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -142,6 +144,18 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
   {
     URLImpl url = new URLImpl();
     return url;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public QualifiedPath createQualifiedPath()
+  {
+    QualifiedPathImpl qualifiedPath = new QualifiedPathImpl();
+    return qualifiedPath;
   }
 
   /**
@@ -250,6 +264,18 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
   {
     PictureImpl picture = new PictureImpl();
     return picture;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ImagePath createImagePath()
+  {
+    ImagePathImpl imagePath = new ImagePathImpl();
+    return imagePath;
   }
 
   /**

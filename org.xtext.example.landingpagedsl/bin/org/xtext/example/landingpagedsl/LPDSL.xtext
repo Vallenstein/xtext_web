@@ -28,7 +28,8 @@ URL:
 ;
 
 QualifiedPath:
-	('http://www.' | 'https://www.' | 'www.')? ID ('.' ID)* ('/' ID)*
+	value=STRING ('.' STRING)*
+	//('http://www.' | 'https://www.' | 'www.')? STRING ('.' STRING)+ ('/' STRING)*
 ;
 
 PageHeader:
@@ -79,5 +80,7 @@ Picture:
 ;
 
 ImagePath:
-	ID ('/' ID)* '.' ('jpg' | 'JPG' | 'jpeg' | 'JPEG' | 'png' | 'PNG')
+	value=STRING
+	//STRING ('/' STRING)* '.' ('jpg'|'JPG'|'jpeg'|'JPEG'|'png'|'PNG')
+	
 ;

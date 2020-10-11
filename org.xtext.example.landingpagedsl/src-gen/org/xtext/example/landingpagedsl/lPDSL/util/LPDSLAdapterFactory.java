@@ -101,6 +101,11 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
         return createURLAdapter();
       }
       @Override
+      public Adapter caseQualifiedPath(QualifiedPath object)
+      {
+        return createQualifiedPathAdapter();
+      }
+      @Override
       public Adapter casePageHeader(PageHeader object)
       {
         return createPageHeaderAdapter();
@@ -144,6 +149,11 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter casePicture(Picture object)
       {
         return createPictureAdapter();
+      }
+      @Override
+      public Adapter caseImagePath(ImagePath object)
+      {
+        return createImagePathAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -238,6 +248,21 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createURLAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath <em>Qualified Path</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.QualifiedPath
+   * @generated
+   */
+  public Adapter createQualifiedPathAdapter()
   {
     return null;
   }
@@ -373,6 +398,21 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPictureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.ImagePath <em>Image Path</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ImagePath
+   * @generated
+   */
+  public Adapter createImagePathAdapter()
   {
     return null;
   }

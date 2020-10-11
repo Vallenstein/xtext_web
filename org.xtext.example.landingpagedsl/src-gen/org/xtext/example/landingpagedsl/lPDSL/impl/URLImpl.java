@@ -6,17 +6,21 @@ package org.xtext.example.landingpagedsl.lPDSL.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
+import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.URL;
 
 /**
@@ -56,14 +60,14 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPath() <em>Path</em>}' attribute list.
+   * The cached value of the '{@link #getPath() <em>Path</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPath()
    * @generated
    * @ordered
    */
-  protected EList<String> path;
+  protected EList<QualifiedPath> path;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,13 +121,29 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
    * @generated
    */
   @Override
-  public EList<String> getPath()
+  public EList<QualifiedPath> getPath()
   {
     if (path == null)
     {
-      path = new EDataTypeEList<String>(String.class, this, LPDSLPackage.URL__PATH);
+      path = new EObjectContainmentEList<QualifiedPath>(QualifiedPath.class, this, LPDSLPackage.URL__PATH);
     }
     return path;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LPDSLPackage.URL__PATH:
+        return ((InternalEList<?>)getPath()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -160,7 +180,7 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
         return;
       case LPDSLPackage.URL__PATH:
         getPath().clear();
-        getPath().addAll((Collection<? extends String>)newValue);
+        getPath().addAll((Collection<? extends QualifiedPath>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -217,8 +237,6 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", path: ");
-    result.append(path);
     result.append(')');
     return result.toString();
   }
