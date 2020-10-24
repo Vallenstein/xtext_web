@@ -2,8 +2,10 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.eclipse.xtext.validation.Check"/>
     <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.TabItems"/>
-    <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage"/>
     <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.LandingPage"/>
     <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.PageComponent"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage"/>
+    <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl"/>
+    <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage.Literals"/>
 </qualifiedTypeNameHistroy>
