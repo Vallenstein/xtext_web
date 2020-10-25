@@ -8,7 +8,27 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.xtext.example.landingpagedsl.lPDSL.*;
+import org.xtext.example.landingpagedsl.lPDSL.AboutMe;
+import org.xtext.example.landingpagedsl.lPDSL.ContactInformation;
+import org.xtext.example.landingpagedsl.lPDSL.Description;
+import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
+import org.xtext.example.landingpagedsl.lPDSL.Items;
+import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
+import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
+import org.xtext.example.landingpagedsl.lPDSL.LinkItem;
+import org.xtext.example.landingpagedsl.lPDSL.Links;
+import org.xtext.example.landingpagedsl.lPDSL.PageBody;
+import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
+import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
+import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Picture;
+import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
+import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
+import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.Sections;
+import org.xtext.example.landingpagedsl.lPDSL.TabItems;
+import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
+import org.xtext.example.landingpagedsl.lPDSL.URL;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +107,14 @@ public class LPDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LPDSLPackage.PICTURE_CAROUSEL:
+      {
+        PictureCarousel pictureCarousel = (PictureCarousel)theEObject;
+        T result = casePictureCarousel(pictureCarousel);
+        if (result == null) result = caseSections(pictureCarousel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LPDSLPackage.PAGE_FOOTER:
       {
         PageFooter pageFooter = (PageFooter)theEObject;
@@ -146,6 +174,22 @@ public class LPDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LPDSLPackage.LINKS:
+      {
+        Links links = (Links)theEObject;
+        T result = caseLinks(links);
+        if (result == null) result = caseSections(links);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LPDSLPackage.CONTACT_INFORMATION:
+      {
+        ContactInformation contactInformation = (ContactInformation)theEObject;
+        T result = caseContactInformation(contactInformation);
+        if (result == null) result = caseSections(contactInformation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LPDSLPackage.RESUME:
       {
         Resume resume = (Resume)theEObject;
@@ -165,6 +209,20 @@ public class LPDSLSwitch<T> extends Switch<T>
       {
         Description description = (Description)theEObject;
         T result = caseDescription(description);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LPDSLPackage.TIME_SPECIFIER:
+      {
+        TimeSpecifier timeSpecifier = (TimeSpecifier)theEObject;
+        T result = caseTimeSpecifier(timeSpecifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LPDSLPackage.INTEGER:
+      {
+        org.xtext.example.landingpagedsl.lPDSL.Integer integer = (org.xtext.example.landingpagedsl.lPDSL.Integer)theEObject;
+        T result = caseInteger(integer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -222,6 +280,22 @@ public class LPDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePageComponent(PageComponent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Picture Carousel</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Picture Carousel</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePictureCarousel(PictureCarousel object)
   {
     return null;
   }
@@ -355,6 +429,38 @@ public class LPDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Links</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Links</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLinks(Links object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Contact Information</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Contact Information</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseContactInformation(ContactInformation object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Resume</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -398,6 +504,38 @@ public class LPDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDescription(Description object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Time Specifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Time Specifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTimeSpecifier(TimeSpecifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Integer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Integer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteger(org.xtext.example.landingpagedsl.lPDSL.Integer object)
   {
     return null;
   }

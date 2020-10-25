@@ -15,19 +15,23 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.landingpagedsl.lPDSL.AboutMe;
+import org.xtext.example.landingpagedsl.lPDSL.ContactInformation;
 import org.xtext.example.landingpagedsl.lPDSL.Description;
 import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
 import org.xtext.example.landingpagedsl.lPDSL.Items;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
 import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
 import org.xtext.example.landingpagedsl.lPDSL.LinkItem;
+import org.xtext.example.landingpagedsl.lPDSL.Links;
 import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
+import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
 import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
+import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
 import org.xtext.example.landingpagedsl.lPDSL.URL;
 import org.xtext.example.landingpagedsl.services.LPDSLGrammarAccess;
 
@@ -48,11 +52,17 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case LPDSLPackage.ABOUT_ME:
 				sequence_AboutMe(context, (AboutMe) semanticObject); 
 				return; 
+			case LPDSLPackage.CONTACT_INFORMATION:
+				sequence_ContactInformation(context, (ContactInformation) semanticObject); 
+				return; 
 			case LPDSLPackage.DESCRIPTION:
 				sequence_Description(context, (Description) semanticObject); 
 				return; 
 			case LPDSLPackage.IMAGE_PATH:
 				sequence_ImagePath(context, (ImagePath) semanticObject); 
+				return; 
+			case LPDSLPackage.INTEGER:
+				sequence_Integer(context, (org.xtext.example.landingpagedsl.lPDSL.Integer) semanticObject); 
 				return; 
 			case LPDSLPackage.ITEMS:
 				sequence_Items(context, (Items) semanticObject); 
@@ -62,6 +72,9 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case LPDSLPackage.LINK_ITEM:
 				sequence_LinkItem(context, (LinkItem) semanticObject); 
+				return; 
+			case LPDSLPackage.LINKS:
+				sequence_Links(context, (Links) semanticObject); 
 				return; 
 			case LPDSLPackage.PAGE_BODY:
 				sequence_PageBody(context, (PageBody) semanticObject); 
@@ -75,6 +88,9 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case LPDSLPackage.PICTURE:
 				sequence_Picture(context, (Picture) semanticObject); 
 				return; 
+			case LPDSLPackage.PICTURE_CAROUSEL:
+				sequence_PictureCarousel(context, (PictureCarousel) semanticObject); 
+				return; 
 			case LPDSLPackage.QUALIFIED_PATH:
 				sequence_QualifiedPath(context, (QualifiedPath) semanticObject); 
 				return; 
@@ -83,6 +99,9 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case LPDSLPackage.TAB_ITEMS:
 				sequence_TabItems(context, (TabItems) semanticObject); 
+				return; 
+			case LPDSLPackage.TIME_SPECIFIER:
+				sequence_TimeSpecifier(context, (TimeSpecifier) semanticObject); 
 				return; 
 			case LPDSLPackage.URL:
 				sequence_URL(context, (URL) semanticObject); 
@@ -102,6 +121,25 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_AboutMe(ISerializationContext context, AboutMe semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Sections returns ContactInformation
+	 *     ContactInformation returns ContactInformation
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_ContactInformation(ISerializationContext context, ContactInformation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LPDSLPackage.Literals.SECTIONS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LPDSLPackage.Literals.SECTIONS__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getContactInformationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -137,6 +175,24 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getImagePathAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Integer returns Integer
+	 *
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_Integer(ISerializationContext context, org.xtext.example.landingpagedsl.lPDSL.Integer semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LPDSLPackage.Literals.INTEGER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LPDSLPackage.Literals.INTEGER__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntegerAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -179,6 +235,19 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Sections returns Links
+	 *     Links returns Links
+	 *
+	 * Constraint:
+	 *     (name=ID links+=LinkItem*)
+	 */
+	protected void sequence_Links(ISerializationContext context, Links semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     PageComponent returns PageBody
 	 *     PageBody returns PageBody
 	 *
@@ -212,6 +281,19 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (name=ID title+=Items tabs+=TabItems*)
 	 */
 	protected void sequence_PageHeader(ISerializationContext context, PageHeader semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PictureCarousel returns PictureCarousel
+	 *     Sections returns PictureCarousel
+	 *
+	 * Constraint:
+	 *     (name=ID timer+=TimeSpecifier picture+=Picture*)
+	 */
+	protected void sequence_PictureCarousel(ISerializationContext context, PictureCarousel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -267,6 +349,18 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (name=ID description+=Description)
 	 */
 	protected void sequence_TabItems(ISerializationContext context, TabItems semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TimeSpecifier returns TimeSpecifier
+	 *
+	 * Constraint:
+	 *     (name=ID time+=Integer)
+	 */
+	protected void sequence_TimeSpecifier(ISerializationContext context, TimeSpecifier semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

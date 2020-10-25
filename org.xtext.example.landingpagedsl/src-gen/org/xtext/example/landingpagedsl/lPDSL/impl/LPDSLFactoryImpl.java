@@ -11,7 +11,28 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.xtext.example.landingpagedsl.lPDSL.*;
+import org.xtext.example.landingpagedsl.lPDSL.AboutMe;
+import org.xtext.example.landingpagedsl.lPDSL.ContactInformation;
+import org.xtext.example.landingpagedsl.lPDSL.Description;
+import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
+import org.xtext.example.landingpagedsl.lPDSL.Items;
+import org.xtext.example.landingpagedsl.lPDSL.LPDSLFactory;
+import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
+import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
+import org.xtext.example.landingpagedsl.lPDSL.LinkItem;
+import org.xtext.example.landingpagedsl.lPDSL.Links;
+import org.xtext.example.landingpagedsl.lPDSL.PageBody;
+import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
+import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
+import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Picture;
+import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
+import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
+import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.Sections;
+import org.xtext.example.landingpagedsl.lPDSL.TabItems;
+import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
+import org.xtext.example.landingpagedsl.lPDSL.URL;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,6 +88,7 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
     {
       case LPDSLPackage.LANDING_PAGE: return createLandingPage();
       case LPDSLPackage.PAGE_COMPONENT: return createPageComponent();
+      case LPDSLPackage.PICTURE_CAROUSEL: return createPictureCarousel();
       case LPDSLPackage.PAGE_FOOTER: return createPageFooter();
       case LPDSLPackage.LINK_ITEM: return createLinkItem();
       case LPDSLPackage.URL: return createURL();
@@ -75,9 +97,13 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
       case LPDSLPackage.TAB_ITEMS: return createTabItems();
       case LPDSLPackage.PAGE_BODY: return createPageBody();
       case LPDSLPackage.SECTIONS: return createSections();
+      case LPDSLPackage.LINKS: return createLinks();
+      case LPDSLPackage.CONTACT_INFORMATION: return createContactInformation();
       case LPDSLPackage.RESUME: return createResume();
       case LPDSLPackage.ITEMS: return createItems();
       case LPDSLPackage.DESCRIPTION: return createDescription();
+      case LPDSLPackage.TIME_SPECIFIER: return createTimeSpecifier();
+      case LPDSLPackage.INTEGER: return createInteger();
       case LPDSLPackage.ABOUT_ME: return createAboutMe();
       case LPDSLPackage.PICTURE: return createPicture();
       case LPDSLPackage.IMAGE_PATH: return createImagePath();
@@ -108,6 +134,18 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
   {
     PageComponentImpl pageComponent = new PageComponentImpl();
     return pageComponent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PictureCarousel createPictureCarousel()
+  {
+    PictureCarouselImpl pictureCarousel = new PictureCarouselImpl();
+    return pictureCarousel;
   }
 
   /**
@@ -212,6 +250,30 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
    * @generated
    */
   @Override
+  public Links createLinks()
+  {
+    LinksImpl links = new LinksImpl();
+    return links;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ContactInformation createContactInformation()
+  {
+    ContactInformationImpl contactInformation = new ContactInformationImpl();
+    return contactInformation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Resume createResume()
   {
     ResumeImpl resume = new ResumeImpl();
@@ -240,6 +302,30 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
   {
     DescriptionImpl description = new DescriptionImpl();
     return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TimeSpecifier createTimeSpecifier()
+  {
+    TimeSpecifierImpl timeSpecifier = new TimeSpecifierImpl();
+    return timeSpecifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public org.xtext.example.landingpagedsl.lPDSL.Integer createInteger()
+  {
+    IntegerImpl integer = new IntegerImpl();
+    return integer;
   }
 
   /**

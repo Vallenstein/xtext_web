@@ -10,7 +10,27 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.xtext.example.landingpagedsl.lPDSL.*;
+import org.xtext.example.landingpagedsl.lPDSL.AboutMe;
+import org.xtext.example.landingpagedsl.lPDSL.ContactInformation;
+import org.xtext.example.landingpagedsl.lPDSL.Description;
+import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
+import org.xtext.example.landingpagedsl.lPDSL.Items;
+import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
+import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
+import org.xtext.example.landingpagedsl.lPDSL.LinkItem;
+import org.xtext.example.landingpagedsl.lPDSL.Links;
+import org.xtext.example.landingpagedsl.lPDSL.PageBody;
+import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
+import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
+import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Picture;
+import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
+import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
+import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.Sections;
+import org.xtext.example.landingpagedsl.lPDSL.TabItems;
+import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
+import org.xtext.example.landingpagedsl.lPDSL.URL;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,6 +106,11 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
         return createPageComponentAdapter();
       }
       @Override
+      public Adapter casePictureCarousel(PictureCarousel object)
+      {
+        return createPictureCarouselAdapter();
+      }
+      @Override
       public Adapter casePageFooter(PageFooter object)
       {
         return createPageFooterAdapter();
@@ -126,6 +151,16 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
         return createSectionsAdapter();
       }
       @Override
+      public Adapter caseLinks(Links object)
+      {
+        return createLinksAdapter();
+      }
+      @Override
+      public Adapter caseContactInformation(ContactInformation object)
+      {
+        return createContactInformationAdapter();
+      }
+      @Override
       public Adapter caseResume(Resume object)
       {
         return createResumeAdapter();
@@ -139,6 +174,16 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDescription(Description object)
       {
         return createDescriptionAdapter();
+      }
+      @Override
+      public Adapter caseTimeSpecifier(TimeSpecifier object)
+      {
+        return createTimeSpecifierAdapter();
+      }
+      @Override
+      public Adapter caseInteger(org.xtext.example.landingpagedsl.lPDSL.Integer object)
+      {
+        return createIntegerAdapter();
       }
       @Override
       public Adapter caseAboutMe(AboutMe object)
@@ -203,6 +248,21 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPageComponentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.PictureCarousel <em>Picture Carousel</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.PictureCarousel
+   * @generated
+   */
+  public Adapter createPictureCarouselAdapter()
   {
     return null;
   }
@@ -328,6 +388,36 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.Links <em>Links</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Links
+   * @generated
+   */
+  public Adapter createLinksAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.ContactInformation <em>Contact Information</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ContactInformation
+   * @generated
+   */
+  public Adapter createContactInformationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.Resume <em>Resume</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -368,6 +458,36 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDescriptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier <em>Time Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier
+   * @generated
+   */
+  public Adapter createTimeSpecifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.Integer <em>Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Integer
+   * @generated
+   */
+  public Adapter createIntegerAdapter()
   {
     return null;
   }

@@ -7,9 +7,15 @@ LandingPage:
 ;	
 
 PageComponent:
-	PageHeader | PageBody | PageFooter
+	PageHeader | PageBody | PageFooter 
 ;
 
+PictureCarousel:
+	'carousel' name=ID '{'
+		timer+=TimeSpecifier
+		(picture+=Picture)*
+	'}'
+;
 PageFooter:
 	'footer' name=ID '{'
 		(links+=LinkItem)*
@@ -29,7 +35,6 @@ URL:
 
 QualifiedPath:
 	value=STRING ('.' STRING)*
-	//('http://www.' | 'https://www.' | 'www.')? STRING ('.' STRING)+ ('/' STRING)*
 ;
 
 PageHeader:
@@ -51,7 +56,18 @@ PageBody:
 ;
 
 Sections:
-	Resume | AboutMe
+	Resume | AboutMe | PictureCarousel | ContactInformation | Links
+;
+
+Links:
+	'links' name=ID '{'
+		(links+=LinkItem)*
+	'}'
+;
+
+ContactInformation:
+	'contactinfo' name=ID '{'
+	'}'
 ;
 
 Resume:
@@ -68,6 +84,13 @@ Description:
 	value=STRING
 ;
 
+TimeSpecifier:
+	name=ID ':' time+=Integer
+;
+
+Integer:
+	value=INT
+;
 AboutMe:
 	'aboutme' name=ID '{'
 		picture+=Picture
@@ -81,5 +104,4 @@ Picture:
 
 ImagePath:
 	value=STRING
-	//STRING ('/' STRING)* '.' ('jpg'|'JPG'|'jpeg'|'JPEG'|'png'|'PNG')
 ;

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.landingpagedsl.lPDSL.AboutMe;
+import org.xtext.example.landingpagedsl.lPDSL.ContactInformation;
 import org.xtext.example.landingpagedsl.lPDSL.Description;
 import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
 import org.xtext.example.landingpagedsl.lPDSL.Items;
@@ -18,15 +19,18 @@ import org.xtext.example.landingpagedsl.lPDSL.LPDSLFactory;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
 import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
 import org.xtext.example.landingpagedsl.lPDSL.LinkItem;
+import org.xtext.example.landingpagedsl.lPDSL.Links;
 import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
+import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
 import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
+import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,6 +53,13 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   private EClass pageComponentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pictureCarouselEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,6 +122,20 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass linksEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass contactInformationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass resumeEClass = null;
 
   /**
@@ -126,6 +151,20 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   private EClass descriptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass timeSpecifierEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass integerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -253,6 +292,39 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
   public EAttribute getPageComponent_Name()
   {
     return (EAttribute)pageComponentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPictureCarousel()
+  {
+    return pictureCarouselEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPictureCarousel_Timer()
+  {
+    return (EReference)pictureCarouselEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPictureCarousel_Picture()
+  {
+    return (EReference)pictureCarouselEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -492,6 +564,39 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   @Override
+  public EClass getLinks()
+  {
+    return linksEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLinks_Links()
+  {
+    return (EReference)linksEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getContactInformation()
+  {
+    return contactInformationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getResume()
   {
     return resumeEClass;
@@ -561,6 +666,61 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
   public EAttribute getDescription_Value()
   {
     return (EAttribute)descriptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTimeSpecifier()
+  {
+    return timeSpecifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTimeSpecifier_Name()
+  {
+    return (EAttribute)timeSpecifierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTimeSpecifier_Time()
+  {
+    return (EReference)timeSpecifierEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInteger()
+  {
+    return integerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInteger_Value()
+  {
+    return (EAttribute)integerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -688,6 +848,10 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
     pageComponentEClass = createEClass(PAGE_COMPONENT);
     createEAttribute(pageComponentEClass, PAGE_COMPONENT__NAME);
 
+    pictureCarouselEClass = createEClass(PICTURE_CAROUSEL);
+    createEReference(pictureCarouselEClass, PICTURE_CAROUSEL__TIMER);
+    createEReference(pictureCarouselEClass, PICTURE_CAROUSEL__PICTURE);
+
     pageFooterEClass = createEClass(PAGE_FOOTER);
     createEReference(pageFooterEClass, PAGE_FOOTER__LINKS);
 
@@ -717,6 +881,11 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
     sectionsEClass = createEClass(SECTIONS);
     createEAttribute(sectionsEClass, SECTIONS__NAME);
 
+    linksEClass = createEClass(LINKS);
+    createEReference(linksEClass, LINKS__LINKS);
+
+    contactInformationEClass = createEClass(CONTACT_INFORMATION);
+
     resumeEClass = createEClass(RESUME);
     createEReference(resumeEClass, RESUME__RESUMEITEMS);
 
@@ -726,6 +895,13 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     descriptionEClass = createEClass(DESCRIPTION);
     createEAttribute(descriptionEClass, DESCRIPTION__VALUE);
+
+    timeSpecifierEClass = createEClass(TIME_SPECIFIER);
+    createEAttribute(timeSpecifierEClass, TIME_SPECIFIER__NAME);
+    createEReference(timeSpecifierEClass, TIME_SPECIFIER__TIME);
+
+    integerEClass = createEClass(INTEGER);
+    createEAttribute(integerEClass, INTEGER__VALUE);
 
     aboutMeEClass = createEClass(ABOUT_ME);
     createEReference(aboutMeEClass, ABOUT_ME__PICTURE);
@@ -768,9 +944,12 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    pictureCarouselEClass.getESuperTypes().add(this.getSections());
     pageFooterEClass.getESuperTypes().add(this.getPageComponent());
     pageHeaderEClass.getESuperTypes().add(this.getPageComponent());
     pageBodyEClass.getESuperTypes().add(this.getPageComponent());
+    linksEClass.getESuperTypes().add(this.getSections());
+    contactInformationEClass.getESuperTypes().add(this.getSections());
     resumeEClass.getESuperTypes().add(this.getSections());
     aboutMeEClass.getESuperTypes().add(this.getSections());
 
@@ -780,6 +959,10 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     initEClass(pageComponentEClass, PageComponent.class, "PageComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPageComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, PageComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pictureCarouselEClass, PictureCarousel.class, "PictureCarousel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPictureCarousel_Timer(), this.getTimeSpecifier(), null, "timer", null, 0, -1, PictureCarousel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPictureCarousel_Picture(), this.getPicture(), null, "picture", null, 0, -1, PictureCarousel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pageFooterEClass, PageFooter.class, "PageFooter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPageFooter_Links(), this.getLinkItem(), null, "links", null, 0, -1, PageFooter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -810,6 +993,11 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
     initEClass(sectionsEClass, Sections.class, "Sections", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSections_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sections.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(linksEClass, Links.class, "Links", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLinks_Links(), this.getLinkItem(), null, "links", null, 0, -1, Links.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(contactInformationEClass, ContactInformation.class, "ContactInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(resumeEClass, Resume.class, "Resume", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getResume_Resumeitems(), this.getItems(), null, "resumeitems", null, 0, -1, Resume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -819,6 +1007,13 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDescription_Value(), ecorePackage.getEString(), "value", null, 0, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(timeSpecifierEClass, TimeSpecifier.class, "TimeSpecifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTimeSpecifier_Name(), ecorePackage.getEString(), "name", null, 0, 1, TimeSpecifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTimeSpecifier_Time(), this.getInteger(), null, "time", null, 0, -1, TimeSpecifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(integerEClass, org.xtext.example.landingpagedsl.lPDSL.Integer.class, "Integer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInteger_Value(), ecorePackage.getEInt(), "value", null, 0, 1, org.xtext.example.landingpagedsl.lPDSL.Integer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(aboutMeEClass, AboutMe.class, "AboutMe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAboutMe_Picture(), this.getPicture(), null, "picture", null, 0, -1, AboutMe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

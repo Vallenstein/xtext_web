@@ -42,6 +42,15 @@ public interface LPDSLFactory extends EFactory
   PageComponent createPageComponent();
 
   /**
+   * Returns a new object of class '<em>Picture Carousel</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Picture Carousel</em>'.
+   * @generated
+   */
+  PictureCarousel createPictureCarousel();
+
+  /**
    * Returns a new object of class '<em>Page Footer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,6 +123,24 @@ public interface LPDSLFactory extends EFactory
   Sections createSections();
 
   /**
+   * Returns a new object of class '<em>Links</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Links</em>'.
+   * @generated
+   */
+  Links createLinks();
+
+  /**
+   * Returns a new object of class '<em>Contact Information</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Contact Information</em>'.
+   * @generated
+   */
+  ContactInformation createContactInformation();
+
+  /**
    * Returns a new object of class '<em>Resume</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +166,24 @@ public interface LPDSLFactory extends EFactory
    * @generated
    */
   Description createDescription();
+
+  /**
+   * Returns a new object of class '<em>Time Specifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Time Specifier</em>'.
+   * @generated
+   */
+  TimeSpecifier createTimeSpecifier();
+
+  /**
+   * Returns a new object of class '<em>Integer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Integer</em>'.
+   * @generated
+   */
+  Integer createInteger();
 
   /**
    * Returns a new object of class '<em>About Me</em>'.

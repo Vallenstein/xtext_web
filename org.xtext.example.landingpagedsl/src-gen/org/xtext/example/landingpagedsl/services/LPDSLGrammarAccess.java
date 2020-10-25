@@ -60,6 +60,56 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//PageFooter
 		public RuleCall getPageFooterParserRuleCall_2() { return cPageFooterParserRuleCall_2; }
 	}
+	public class PictureCarouselElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.PictureCarousel");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCarouselKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTimerAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTimerTimeSpecifierParserRuleCall_3_0 = (RuleCall)cTimerAssignment_3.eContents().get(0);
+		private final Assignment cPictureAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPicturePictureParserRuleCall_4_0 = (RuleCall)cPictureAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//PictureCarousel:
+		//	'carousel' name=ID '{'
+		//	timer+=TimeSpecifier
+		//	picture+=Picture*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'carousel' name=ID '{' timer+=TimeSpecifier picture+=Picture* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'carousel'
+		public Keyword getCarouselKeyword_0() { return cCarouselKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//timer+=TimeSpecifier
+		public Assignment getTimerAssignment_3() { return cTimerAssignment_3; }
+		
+		//TimeSpecifier
+		public RuleCall getTimerTimeSpecifierParserRuleCall_3_0() { return cTimerTimeSpecifierParserRuleCall_3_0; }
+		
+		//picture+=Picture*
+		public Assignment getPictureAssignment_4() { return cPictureAssignment_4; }
+		
+		//Picture
+		public RuleCall getPicturePictureParserRuleCall_4_0() { return cPicturePictureParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
 	public class PageFooterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.PageFooter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -192,9 +242,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cSTRINGTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedPath:
-		//	value=STRING ('.' STRING)*
-		//	//('http://www.' | 'https://www.' | 'www.')? STRING ('.' STRING)+ ('/' STRING)*
-		//;
+		//	value=STRING ('.' STRING)*;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=STRING ('.' STRING)*
@@ -342,12 +390,15 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cResumeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cAboutMeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPictureCarouselParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cContactInformationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cLinksParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Sections:
-		//	Resume | AboutMe;
+		//	Resume | AboutMe | PictureCarousel | ContactInformation | Links;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Resume | AboutMe
+		//Resume | AboutMe | PictureCarousel | ContactInformation | Links
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Resume
@@ -355,6 +406,88 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//AboutMe
 		public RuleCall getAboutMeParserRuleCall_1() { return cAboutMeParserRuleCall_1; }
+		
+		//PictureCarousel
+		public RuleCall getPictureCarouselParserRuleCall_2() { return cPictureCarouselParserRuleCall_2; }
+		
+		//ContactInformation
+		public RuleCall getContactInformationParserRuleCall_3() { return cContactInformationParserRuleCall_3; }
+		
+		//Links
+		public RuleCall getLinksParserRuleCall_4() { return cLinksParserRuleCall_4; }
+	}
+	public class LinksElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.Links");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLinksKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cLinksAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLinksLinkItemParserRuleCall_3_0 = (RuleCall)cLinksAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Links:
+		//	'links' name=ID '{'
+		//	links+=LinkItem*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'links' name=ID '{' links+=LinkItem* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'links'
+		public Keyword getLinksKeyword_0() { return cLinksKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//links+=LinkItem*
+		public Assignment getLinksAssignment_3() { return cLinksAssignment_3; }
+		
+		//LinkItem
+		public RuleCall getLinksLinkItemParserRuleCall_3_0() { return cLinksLinkItemParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class ContactInformationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.ContactInformation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cContactinfoKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ContactInformation:
+		//	'contactinfo' name=ID '{'
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'contactinfo' name=ID '{' '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'contactinfo'
+		public Keyword getContactinfoKeyword_0() { return cContactinfoKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class ResumeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.Resume");
@@ -443,6 +576,52 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
+	public class TimeSpecifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.TimeSpecifier");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTimeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTimeIntegerParserRuleCall_2_0 = (RuleCall)cTimeAssignment_2.eContents().get(0);
+		
+		//TimeSpecifier:
+		//	name=ID ':' time+=Integer;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID ':' time+=Integer
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//time+=Integer
+		public Assignment getTimeAssignment_2() { return cTimeAssignment_2; }
+		
+		//Integer
+		public RuleCall getTimeIntegerParserRuleCall_2_0() { return cTimeIntegerParserRuleCall_2_0; }
+	}
+	public class IntegerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.Integer");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//Integer:
+		//	value=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//value=INT
+		public Assignment getValueAssignment() { return cValueAssignment; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
+	}
 	public class AboutMeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.AboutMe");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -530,9 +709,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//ImagePath:
-		//	value=STRING
-		//	//STRING ('/' STRING)* '.' ('jpg'|'JPG'|'jpeg'|'JPEG'|'png'|'PNG')
-		//;
+		//	value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//value=STRING
@@ -545,6 +722,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	private final LandingPageElements pLandingPage;
 	private final PageComponentElements pPageComponent;
+	private final PictureCarouselElements pPictureCarousel;
 	private final PageFooterElements pPageFooter;
 	private final LinkItemElements pLinkItem;
 	private final URLElements pURL;
@@ -553,9 +731,13 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final TabItemsElements pTabItems;
 	private final PageBodyElements pPageBody;
 	private final SectionsElements pSections;
+	private final LinksElements pLinks;
+	private final ContactInformationElements pContactInformation;
 	private final ResumeElements pResume;
 	private final ItemsElements pItems;
 	private final DescriptionElements pDescription;
+	private final TimeSpecifierElements pTimeSpecifier;
+	private final IntegerElements pInteger;
 	private final AboutMeElements pAboutMe;
 	private final PictureElements pPicture;
 	private final ImagePathElements pImagePath;
@@ -571,6 +753,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.gaTerminals = gaTerminals;
 		this.pLandingPage = new LandingPageElements();
 		this.pPageComponent = new PageComponentElements();
+		this.pPictureCarousel = new PictureCarouselElements();
 		this.pPageFooter = new PageFooterElements();
 		this.pLinkItem = new LinkItemElements();
 		this.pURL = new URLElements();
@@ -579,9 +762,13 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pTabItems = new TabItemsElements();
 		this.pPageBody = new PageBodyElements();
 		this.pSections = new SectionsElements();
+		this.pLinks = new LinksElements();
+		this.pContactInformation = new ContactInformationElements();
 		this.pResume = new ResumeElements();
 		this.pItems = new ItemsElements();
 		this.pDescription = new DescriptionElements();
+		this.pTimeSpecifier = new TimeSpecifierElements();
+		this.pInteger = new IntegerElements();
 		this.pAboutMe = new AboutMeElements();
 		this.pPicture = new PictureElements();
 		this.pImagePath = new ImagePathElements();
@@ -634,6 +821,19 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getPageComponentAccess().getRule();
 	}
 	
+	//PictureCarousel:
+	//	'carousel' name=ID '{'
+	//	timer+=TimeSpecifier
+	//	picture+=Picture*
+	//	'}';
+	public PictureCarouselElements getPictureCarouselAccess() {
+		return pPictureCarousel;
+	}
+	
+	public ParserRule getPictureCarouselRule() {
+		return getPictureCarouselAccess().getRule();
+	}
+	
 	//PageFooter:
 	//	'footer' name=ID '{'
 	//	links+=LinkItem*
@@ -670,9 +870,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//QualifiedPath:
-	//	value=STRING ('.' STRING)*
-	//	//('http://www.' | 'https://www.' | 'www.')? STRING ('.' STRING)+ ('/' STRING)*
-	//;
+	//	value=STRING ('.' STRING)*;
 	public QualifiedPathElements getQualifiedPathAccess() {
 		return pQualifiedPath;
 	}
@@ -717,13 +915,36 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Sections:
-	//	Resume | AboutMe;
+	//	Resume | AboutMe | PictureCarousel | ContactInformation | Links;
 	public SectionsElements getSectionsAccess() {
 		return pSections;
 	}
 	
 	public ParserRule getSectionsRule() {
 		return getSectionsAccess().getRule();
+	}
+	
+	//Links:
+	//	'links' name=ID '{'
+	//	links+=LinkItem*
+	//	'}';
+	public LinksElements getLinksAccess() {
+		return pLinks;
+	}
+	
+	public ParserRule getLinksRule() {
+		return getLinksAccess().getRule();
+	}
+	
+	//ContactInformation:
+	//	'contactinfo' name=ID '{'
+	//	'}';
+	public ContactInformationElements getContactInformationAccess() {
+		return pContactInformation;
+	}
+	
+	public ParserRule getContactInformationRule() {
+		return getContactInformationAccess().getRule();
 	}
 	
 	//Resume:
@@ -758,6 +979,26 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getDescriptionAccess().getRule();
 	}
 	
+	//TimeSpecifier:
+	//	name=ID ':' time+=Integer;
+	public TimeSpecifierElements getTimeSpecifierAccess() {
+		return pTimeSpecifier;
+	}
+	
+	public ParserRule getTimeSpecifierRule() {
+		return getTimeSpecifierAccess().getRule();
+	}
+	
+	//Integer:
+	//	value=INT;
+	public IntegerElements getIntegerAccess() {
+		return pInteger;
+	}
+	
+	public ParserRule getIntegerRule() {
+		return getIntegerAccess().getRule();
+	}
+	
 	//AboutMe:
 	//	'aboutme' name=ID '{'
 	//	picture+=Picture
@@ -782,9 +1023,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//ImagePath:
-	//	value=STRING
-	//	//STRING ('/' STRING)* '.' ('jpg'|'JPG'|'jpeg'|'JPEG'|'png'|'PNG')
-	//;
+	//	value=STRING;
 	public ImagePathElements getImagePathAccess() {
 		return pImagePath;
 	}

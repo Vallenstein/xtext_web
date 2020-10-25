@@ -33,6 +33,7 @@ public class LPDSLParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, LPDSLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getPageComponentAccess().getAlternatives(), "rule__PageComponent__Alternatives");
 			builder.put(grammarAccess.getSectionsAccess().getAlternatives(), "rule__Sections__Alternatives");
+			builder.put(grammarAccess.getPictureCarouselAccess().getGroup(), "rule__PictureCarousel__Group__0");
 			builder.put(grammarAccess.getPageFooterAccess().getGroup(), "rule__PageFooter__Group__0");
 			builder.put(grammarAccess.getLinkItemAccess().getGroup(), "rule__LinkItem__Group__0");
 			builder.put(grammarAccess.getURLAccess().getGroup(), "rule__URL__Group__0");
@@ -41,11 +42,17 @@ public class LPDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPageHeaderAccess().getGroup(), "rule__PageHeader__Group__0");
 			builder.put(grammarAccess.getTabItemsAccess().getGroup(), "rule__TabItems__Group__0");
 			builder.put(grammarAccess.getPageBodyAccess().getGroup(), "rule__PageBody__Group__0");
+			builder.put(grammarAccess.getLinksAccess().getGroup(), "rule__Links__Group__0");
+			builder.put(grammarAccess.getContactInformationAccess().getGroup(), "rule__ContactInformation__Group__0");
 			builder.put(grammarAccess.getResumeAccess().getGroup(), "rule__Resume__Group__0");
 			builder.put(grammarAccess.getItemsAccess().getGroup(), "rule__Items__Group__0");
+			builder.put(grammarAccess.getTimeSpecifierAccess().getGroup(), "rule__TimeSpecifier__Group__0");
 			builder.put(grammarAccess.getAboutMeAccess().getGroup(), "rule__AboutMe__Group__0");
 			builder.put(grammarAccess.getPictureAccess().getGroup(), "rule__Picture__Group__0");
 			builder.put(grammarAccess.getLandingPageAccess().getPagecomponentAssignment(), "rule__LandingPage__PagecomponentAssignment");
+			builder.put(grammarAccess.getPictureCarouselAccess().getNameAssignment_1(), "rule__PictureCarousel__NameAssignment_1");
+			builder.put(grammarAccess.getPictureCarouselAccess().getTimerAssignment_3(), "rule__PictureCarousel__TimerAssignment_3");
+			builder.put(grammarAccess.getPictureCarouselAccess().getPictureAssignment_4(), "rule__PictureCarousel__PictureAssignment_4");
 			builder.put(grammarAccess.getPageFooterAccess().getNameAssignment_1(), "rule__PageFooter__NameAssignment_1");
 			builder.put(grammarAccess.getPageFooterAccess().getLinksAssignment_3(), "rule__PageFooter__LinksAssignment_3");
 			builder.put(grammarAccess.getLinkItemAccess().getNameAssignment_1(), "rule__LinkItem__NameAssignment_1");
@@ -61,11 +68,17 @@ public class LPDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTabItemsAccess().getDescriptionAssignment_2(), "rule__TabItems__DescriptionAssignment_2");
 			builder.put(grammarAccess.getPageBodyAccess().getNameAssignment_1(), "rule__PageBody__NameAssignment_1");
 			builder.put(grammarAccess.getPageBodyAccess().getSectionsAssignment_3(), "rule__PageBody__SectionsAssignment_3");
+			builder.put(grammarAccess.getLinksAccess().getNameAssignment_1(), "rule__Links__NameAssignment_1");
+			builder.put(grammarAccess.getLinksAccess().getLinksAssignment_3(), "rule__Links__LinksAssignment_3");
+			builder.put(grammarAccess.getContactInformationAccess().getNameAssignment_1(), "rule__ContactInformation__NameAssignment_1");
 			builder.put(grammarAccess.getResumeAccess().getNameAssignment_1(), "rule__Resume__NameAssignment_1");
 			builder.put(grammarAccess.getResumeAccess().getResumeitemsAssignment_3(), "rule__Resume__ResumeitemsAssignment_3");
 			builder.put(grammarAccess.getItemsAccess().getNameAssignment_0(), "rule__Items__NameAssignment_0");
 			builder.put(grammarAccess.getItemsAccess().getDescriptionAssignment_2(), "rule__Items__DescriptionAssignment_2");
 			builder.put(grammarAccess.getDescriptionAccess().getValueAssignment(), "rule__Description__ValueAssignment");
+			builder.put(grammarAccess.getTimeSpecifierAccess().getNameAssignment_0(), "rule__TimeSpecifier__NameAssignment_0");
+			builder.put(grammarAccess.getTimeSpecifierAccess().getTimeAssignment_2(), "rule__TimeSpecifier__TimeAssignment_2");
+			builder.put(grammarAccess.getIntegerAccess().getValueAssignment(), "rule__Integer__ValueAssignment");
 			builder.put(grammarAccess.getAboutMeAccess().getNameAssignment_1(), "rule__AboutMe__NameAssignment_1");
 			builder.put(grammarAccess.getAboutMeAccess().getPictureAssignment_3(), "rule__AboutMe__PictureAssignment_3");
 			builder.put(grammarAccess.getAboutMeAccess().getDescriptionAssignment_4(), "rule__AboutMe__DescriptionAssignment_4");

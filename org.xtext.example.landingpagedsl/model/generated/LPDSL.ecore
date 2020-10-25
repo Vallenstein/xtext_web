@@ -9,6 +9,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="PageComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PictureCarousel" eSuperTypes="#//Sections">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timer" upperBound="-1"
+        eType="#//TimeSpecifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="picture" upperBound="-1"
+        eType="#//Picture" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PageFooter" eSuperTypes="#//PageComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
         eType="#//LinkItem" containment="true"/>
@@ -46,6 +52,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sections">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Links" eSuperTypes="#//Sections">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+        eType="#//LinkItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContactInformation" eSuperTypes="#//Sections"/>
   <eClassifiers xsi:type="ecore:EClass" name="Resume" eSuperTypes="#//Sections">
     <eStructuralFeatures xsi:type="ecore:EReference" name="resumeitems" upperBound="-1"
         eType="#//Items" containment="true"/>
@@ -57,6 +68,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Description">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeSpecifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" upperBound="-1" eType="#//Integer"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Integer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AboutMe" eSuperTypes="#//Sections">
     <eStructuralFeatures xsi:type="ecore:EReference" name="picture" upperBound="-1"

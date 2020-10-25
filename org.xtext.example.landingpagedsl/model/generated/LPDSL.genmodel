@@ -12,6 +12,10 @@
     <genClasses ecoreClass="LPDSL.ecore#//PageComponent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//PageComponent/name"/>
     </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//PictureCarousel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//PictureCarousel/timer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//PictureCarousel/picture"/>
+    </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//PageFooter">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//PageFooter/links"/>
     </genClasses>
@@ -41,6 +45,10 @@
     <genClasses ecoreClass="LPDSL.ecore#//Sections">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Sections/name"/>
     </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//Links">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//Links/links"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//ContactInformation"/>
     <genClasses ecoreClass="LPDSL.ecore#//Resume">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//Resume/resumeitems"/>
     </genClasses>
@@ -50,6 +58,13 @@
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//Description">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Description/value"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//TimeSpecifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//TimeSpecifier/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//TimeSpecifier/time"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Integer/value"/>
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//AboutMe">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//AboutMe/picture"/>

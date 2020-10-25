@@ -114,6 +114,80 @@ public interface LPDSLPackage extends EPackage
   int PAGE_COMPONENT_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.SectionsImpl <em>Sections</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.SectionsImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getSections()
+   * @generated
+   */
+  int SECTIONS = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTIONS__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Sections</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECTIONS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PictureCarouselImpl <em>Picture Carousel</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.PictureCarouselImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPictureCarousel()
+   * @generated
+   */
+  int PICTURE_CAROUSEL = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PICTURE_CAROUSEL__NAME = SECTIONS__NAME;
+
+  /**
+   * The feature id for the '<em><b>Timer</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PICTURE_CAROUSEL__TIMER = SECTIONS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Picture</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PICTURE_CAROUSEL__PICTURE = SECTIONS_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Picture Carousel</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PICTURE_CAROUSEL_FEATURE_COUNT = SECTIONS_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PageFooterImpl <em>Page Footer</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -121,7 +195,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPageFooter()
    * @generated
    */
-  int PAGE_FOOTER = 2;
+  int PAGE_FOOTER = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -158,7 +232,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getLinkItem()
    * @generated
    */
-  int LINK_ITEM = 3;
+  int LINK_ITEM = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -204,7 +278,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getURL()
    * @generated
    */
-  int URL = 4;
+  int URL = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -241,7 +315,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getQualifiedPath()
    * @generated
    */
-  int QUALIFIED_PATH = 5;
+  int QUALIFIED_PATH = 6;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -269,7 +343,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPageHeader()
    * @generated
    */
-  int PAGE_HEADER = 6;
+  int PAGE_HEADER = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -315,7 +389,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getTabItems()
    * @generated
    */
-  int TAB_ITEMS = 7;
+  int TAB_ITEMS = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -352,7 +426,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPageBody()
    * @generated
    */
-  int PAGE_BODY = 8;
+  int PAGE_BODY = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -382,14 +456,14 @@ public interface LPDSLPackage extends EPackage
   int PAGE_BODY_FEATURE_COUNT = PAGE_COMPONENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.SectionsImpl <em>Sections</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.LinksImpl <em>Links</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.landingpagedsl.lPDSL.impl.SectionsImpl
-   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getSections()
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LinksImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getLinks()
    * @generated
    */
-  int SECTIONS = 9;
+  int LINKS = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -398,16 +472,53 @@ public interface LPDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SECTIONS__NAME = 0;
+  int LINKS__NAME = SECTIONS__NAME;
 
   /**
-   * The number of structural features of the '<em>Sections</em>' class.
+   * The feature id for the '<em><b>Links</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SECTIONS_FEATURE_COUNT = 1;
+  int LINKS__LINKS = SECTIONS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Links</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINKS_FEATURE_COUNT = SECTIONS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ContactInformationImpl <em>Contact Information</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.ContactInformationImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getContactInformation()
+   * @generated
+   */
+  int CONTACT_INFORMATION = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTACT_INFORMATION__NAME = SECTIONS__NAME;
+
+  /**
+   * The number of structural features of the '<em>Contact Information</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTACT_INFORMATION_FEATURE_COUNT = SECTIONS_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeImpl <em>Resume</em>}' class.
@@ -417,7 +528,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getResume()
    * @generated
    */
-  int RESUME = 10;
+  int RESUME = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -454,7 +565,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getItems()
    * @generated
    */
-  int ITEMS = 11;
+  int ITEMS = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -491,7 +602,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getDescription()
    * @generated
    */
-  int DESCRIPTION = 12;
+  int DESCRIPTION = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -512,6 +623,71 @@ public interface LPDSLPackage extends EPackage
   int DESCRIPTION_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.TimeSpecifierImpl <em>Time Specifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.TimeSpecifierImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getTimeSpecifier()
+   * @generated
+   */
+  int TIME_SPECIFIER = 16;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIME_SPECIFIER__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Time</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIME_SPECIFIER__TIME = 1;
+
+  /**
+   * The number of structural features of the '<em>Time Specifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TIME_SPECIFIER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.IntegerImpl <em>Integer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.IntegerImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getInteger()
+   * @generated
+   */
+  int INTEGER = 17;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Integer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTEGER_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.AboutMeImpl <em>About Me</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -519,7 +695,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getAboutMe()
    * @generated
    */
-  int ABOUT_ME = 13;
+  int ABOUT_ME = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -565,7 +741,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPicture()
    * @generated
    */
-  int PICTURE = 14;
+  int PICTURE = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -602,7 +778,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getImagePath()
    * @generated
    */
-  int IMAGE_PATH = 15;
+  int IMAGE_PATH = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -664,6 +840,38 @@ public interface LPDSLPackage extends EPackage
    * @generated
    */
   EAttribute getPageComponent_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.PictureCarousel <em>Picture Carousel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Picture Carousel</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.PictureCarousel
+   * @generated
+   */
+  EClass getPictureCarousel();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.PictureCarousel#getTimer <em>Timer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Timer</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.PictureCarousel#getTimer()
+   * @see #getPictureCarousel()
+   * @generated
+   */
+  EReference getPictureCarousel_Timer();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.PictureCarousel#getPicture <em>Picture</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Picture</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.PictureCarousel#getPicture()
+   * @see #getPictureCarousel()
+   * @generated
+   */
+  EReference getPictureCarousel_Picture();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.PageFooter <em>Page Footer</em>}'.
@@ -889,6 +1097,37 @@ public interface LPDSLPackage extends EPackage
   EAttribute getSections_Name();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.Links <em>Links</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Links</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Links
+   * @generated
+   */
+  EClass getLinks();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.Links#getLinks <em>Links</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Links</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Links#getLinks()
+   * @see #getLinks()
+   * @generated
+   */
+  EReference getLinks_Links();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.ContactInformation <em>Contact Information</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Contact Information</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ContactInformation
+   * @generated
+   */
+  EClass getContactInformation();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.Resume <em>Resume</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -961,6 +1200,59 @@ public interface LPDSLPackage extends EPackage
    * @generated
    */
   EAttribute getDescription_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier <em>Time Specifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Time Specifier</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier
+   * @generated
+   */
+  EClass getTimeSpecifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier#getName()
+   * @see #getTimeSpecifier()
+   * @generated
+   */
+  EAttribute getTimeSpecifier_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier#getTime <em>Time</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Time</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier#getTime()
+   * @see #getTimeSpecifier()
+   * @generated
+   */
+  EReference getTimeSpecifier_Time();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.Integer <em>Integer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Integer</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Integer
+   * @generated
+   */
+  EClass getInteger();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.Integer#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Integer#getValue()
+   * @see #getInteger()
+   * @generated
+   */
+  EAttribute getInteger_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.AboutMe <em>About Me</em>}'.
@@ -1105,6 +1397,32 @@ public interface LPDSLPackage extends EPackage
      * @generated
      */
     EAttribute PAGE_COMPONENT__NAME = eINSTANCE.getPageComponent_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PictureCarouselImpl <em>Picture Carousel</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.PictureCarouselImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPictureCarousel()
+     * @generated
+     */
+    EClass PICTURE_CAROUSEL = eINSTANCE.getPictureCarousel();
+
+    /**
+     * The meta object literal for the '<em><b>Timer</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PICTURE_CAROUSEL__TIMER = eINSTANCE.getPictureCarousel_Timer();
+
+    /**
+     * The meta object literal for the '<em><b>Picture</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PICTURE_CAROUSEL__PICTURE = eINSTANCE.getPictureCarousel_Picture();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PageFooterImpl <em>Page Footer</em>}' class.
@@ -1291,6 +1609,34 @@ public interface LPDSLPackage extends EPackage
     EAttribute SECTIONS__NAME = eINSTANCE.getSections_Name();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.LinksImpl <em>Links</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LinksImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getLinks()
+     * @generated
+     */
+    EClass LINKS = eINSTANCE.getLinks();
+
+    /**
+     * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINKS__LINKS = eINSTANCE.getLinks_Links();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ContactInformationImpl <em>Contact Information</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.ContactInformationImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getContactInformation()
+     * @generated
+     */
+    EClass CONTACT_INFORMATION = eINSTANCE.getContactInformation();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeImpl <em>Resume</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1351,6 +1697,50 @@ public interface LPDSLPackage extends EPackage
      * @generated
      */
     EAttribute DESCRIPTION__VALUE = eINSTANCE.getDescription_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.TimeSpecifierImpl <em>Time Specifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.TimeSpecifierImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getTimeSpecifier()
+     * @generated
+     */
+    EClass TIME_SPECIFIER = eINSTANCE.getTimeSpecifier();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TIME_SPECIFIER__NAME = eINSTANCE.getTimeSpecifier_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Time</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TIME_SPECIFIER__TIME = eINSTANCE.getTimeSpecifier_Time();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.IntegerImpl <em>Integer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.IntegerImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getInteger()
+     * @generated
+     */
+    EClass INTEGER = eINSTANCE.getInteger();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTEGER__VALUE = eINSTANCE.getInteger_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.AboutMeImpl <em>About Me</em>}' class.

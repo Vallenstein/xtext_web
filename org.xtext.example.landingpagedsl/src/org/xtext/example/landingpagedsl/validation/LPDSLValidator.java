@@ -50,7 +50,11 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 
 		for(PageComponent p : page.getPagecomponent()) {
 			for(EObject t : p.eContents()) {
-				if (t.getClass().getSimpleName().toString().equals("ResumeImpl") || t.getClass().getSimpleName().toString().equals("AboutMeImpl")) {
+				if (t.getClass().getSimpleName().toString().equals("ResumeImpl") ||
+						t.getClass().getSimpleName().toString().equals("AboutMeImpl") ||
+						t.getClass().getSimpleName().toString().equals("PictureCarouselImpl") ||
+						t.getClass().getSimpleName().toString().equals("ContactInformationImpl") ||
+						t.getClass().getSimpleName().toString().equals("LinksImpl")) {
 					var eClass = t.eClass();
 					var structuralFeature = eClass.getEStructuralFeature("name");
 					var nodes = NodeModelUtils.findNodesForFeature(t, structuralFeature);
@@ -60,7 +64,6 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 				}
 			}
 		}
-		//boolean flag = True;
 		
 		Set set = new HashSet(tabNames);
 		if(set.size() < tabNames.size()) {
@@ -126,7 +129,7 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 	
 	@Check 
 	public void validURL(QualifiedPath path) {
-		Pattern p = Pattern.compile("^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]");
+		Pattern p = Pattern.compile("^(http:\\/\\/|https:\\/\\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$");
 		Matcher m = p.matcher(path.getValue());
 		if (!m.matches()){
 			warning("Your URL might not be valid", LPDSLPackage.Literals.QUALIFIED_PATH__VALUE);
