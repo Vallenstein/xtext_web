@@ -43,7 +43,9 @@ public class LPDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLinksAccess().getGroup(), "rule__Links__Group__0");
 			builder.put(grammarAccess.getContactInformationAccess().getGroup(), "rule__ContactInformation__Group__0");
 			builder.put(grammarAccess.getResumeAccess().getGroup(), "rule__Resume__Group__0");
+			builder.put(grammarAccess.getResumeSectionAccess().getGroup(), "rule__ResumeSection__Group__0");
 			builder.put(grammarAccess.getItemsAccess().getGroup(), "rule__Items__Group__0");
+			builder.put(grammarAccess.getResumeItemsAccess().getGroup(), "rule__ResumeItems__Group__0");
 			builder.put(grammarAccess.getTimeSpecifierAccess().getGroup(), "rule__TimeSpecifier__Group__0");
 			builder.put(grammarAccess.getAboutMeAccess().getGroup(), "rule__AboutMe__Group__0");
 			builder.put(grammarAccess.getPictureAccess().getGroup(), "rule__Picture__Group__0");
@@ -70,9 +72,15 @@ public class LPDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLinksAccess().getLinksAssignment_3(), "rule__Links__LinksAssignment_3");
 			builder.put(grammarAccess.getContactInformationAccess().getNameAssignment_1(), "rule__ContactInformation__NameAssignment_1");
 			builder.put(grammarAccess.getResumeAccess().getNameAssignment_1(), "rule__Resume__NameAssignment_1");
-			builder.put(grammarAccess.getResumeAccess().getResumeitemsAssignment_3(), "rule__Resume__ResumeitemsAssignment_3");
+			builder.put(grammarAccess.getResumeAccess().getResumesectionsAssignment_3(), "rule__Resume__ResumesectionsAssignment_3");
+			builder.put(grammarAccess.getResumeSectionAccess().getNameAssignment_1(), "rule__ResumeSection__NameAssignment_1");
+			builder.put(grammarAccess.getResumeSectionAccess().getResumeitemsAssignment_3(), "rule__ResumeSection__ResumeitemsAssignment_3");
 			builder.put(grammarAccess.getItemsAccess().getNameAssignment_0(), "rule__Items__NameAssignment_0");
 			builder.put(grammarAccess.getItemsAccess().getDescriptionAssignment_2(), "rule__Items__DescriptionAssignment_2");
+			builder.put(grammarAccess.getResumeItemsAccess().getNameAssignment_1(), "rule__ResumeItems__NameAssignment_1");
+			builder.put(grammarAccess.getResumeItemsAccess().getTitleAssignment_3(), "rule__ResumeItems__TitleAssignment_3");
+			builder.put(grammarAccess.getResumeItemsAccess().getDateAssignment_4(), "rule__ResumeItems__DateAssignment_4");
+			builder.put(grammarAccess.getResumeItemsAccess().getDescriptionAssignment_5(), "rule__ResumeItems__DescriptionAssignment_5");
 			builder.put(grammarAccess.getDescriptionAccess().getValueAssignment(), "rule__Description__ValueAssignment");
 			builder.put(grammarAccess.getTimeSpecifierAccess().getNameAssignment_0(), "rule__TimeSpecifier__NameAssignment_0");
 			builder.put(grammarAccess.getTimeSpecifierAccess().getTimeAssignment_2(), "rule__TimeSpecifier__TimeAssignment_2");

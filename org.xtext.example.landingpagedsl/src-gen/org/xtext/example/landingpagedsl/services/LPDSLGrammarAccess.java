@@ -480,17 +480,17 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cResumeitemsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cResumeitemsItemsParserRuleCall_3_0 = (RuleCall)cResumeitemsAssignment_3.eContents().get(0);
+		private final Assignment cResumesectionsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cResumesectionsResumeSectionParserRuleCall_3_0 = (RuleCall)cResumesectionsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Resume:
 		//	'resume' name=ID '{'
-		//	resumeitems+=Items*
+		//	resumesections+=ResumeSection*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'resume' name=ID '{' resumeitems+=Items* '}'
+		//'resume' name=ID '{' resumesections+=ResumeSection* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'resume'
@@ -505,11 +505,52 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//resumeitems+=Items*
+		//resumesections+=ResumeSection*
+		public Assignment getResumesectionsAssignment_3() { return cResumesectionsAssignment_3; }
+		
+		//ResumeSection
+		public RuleCall getResumesectionsResumeSectionParserRuleCall_3_0() { return cResumesectionsResumeSectionParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class ResumeSectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.ResumeSection");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cResumeSectionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cResumeitemsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cResumeitemsResumeItemsParserRuleCall_3_0 = (RuleCall)cResumeitemsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//ResumeSection:
+		//	'resumeSection' name=ID '{'
+		//	resumeitems+=ResumeItems*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'resumeSection' name=ID '{' resumeitems+=ResumeItems* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'resumeSection'
+		public Keyword getResumeSectionKeyword_0() { return cResumeSectionKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//resumeitems+=ResumeItems*
 		public Assignment getResumeitemsAssignment_3() { return cResumeitemsAssignment_3; }
 		
-		//Items
-		public RuleCall getResumeitemsItemsParserRuleCall_3_0() { return cResumeitemsItemsParserRuleCall_3_0; }
+		//ResumeItems
+		public RuleCall getResumeitemsResumeItemsParserRuleCall_3_0() { return cResumeitemsResumeItemsParserRuleCall_3_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -544,6 +585,65 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//Description
 		public RuleCall getDescriptionDescriptionParserRuleCall_2_0() { return cDescriptionDescriptionParserRuleCall_2_0; }
+	}
+	public class ResumeItemsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.ResumeItems");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cResumeItemKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTitleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTitleItemsParserRuleCall_3_0 = (RuleCall)cTitleAssignment_3.eContents().get(0);
+		private final Assignment cDateAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDateItemsParserRuleCall_4_0 = (RuleCall)cDateAssignment_4.eContents().get(0);
+		private final Assignment cDescriptionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDescriptionItemsParserRuleCall_5_0 = (RuleCall)cDescriptionAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//ResumeItems:
+		//	'resumeItem' name=ID '{'
+		//	title+=Items
+		//	date+=Items
+		//	description+=Items
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'resumeItem' name=ID '{' title+=Items date+=Items description+=Items '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'resumeItem'
+		public Keyword getResumeItemKeyword_0() { return cResumeItemKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//title+=Items
+		public Assignment getTitleAssignment_3() { return cTitleAssignment_3; }
+		
+		//Items
+		public RuleCall getTitleItemsParserRuleCall_3_0() { return cTitleItemsParserRuleCall_3_0; }
+		
+		//date+=Items
+		public Assignment getDateAssignment_4() { return cDateAssignment_4; }
+		
+		//Items
+		public RuleCall getDateItemsParserRuleCall_4_0() { return cDateItemsParserRuleCall_4_0; }
+		
+		//description+=Items
+		public Assignment getDescriptionAssignment_5() { return cDescriptionAssignment_5; }
+		
+		//Items
+		public RuleCall getDescriptionItemsParserRuleCall_5_0() { return cDescriptionItemsParserRuleCall_5_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class DescriptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.Description");
@@ -718,7 +818,9 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final LinksElements pLinks;
 	private final ContactInformationElements pContactInformation;
 	private final ResumeElements pResume;
+	private final ResumeSectionElements pResumeSection;
 	private final ItemsElements pItems;
+	private final ResumeItemsElements pResumeItems;
 	private final DescriptionElements pDescription;
 	private final TimeSpecifierElements pTimeSpecifier;
 	private final IntegerElements pInteger;
@@ -749,7 +851,9 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pLinks = new LinksElements();
 		this.pContactInformation = new ContactInformationElements();
 		this.pResume = new ResumeElements();
+		this.pResumeSection = new ResumeSectionElements();
 		this.pItems = new ItemsElements();
+		this.pResumeItems = new ResumeItemsElements();
 		this.pDescription = new DescriptionElements();
 		this.pTimeSpecifier = new TimeSpecifierElements();
 		this.pInteger = new IntegerElements();
@@ -933,7 +1037,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//Resume:
 	//	'resume' name=ID '{'
-	//	resumeitems+=Items*
+	//	resumesections+=ResumeSection*
 	//	'}';
 	public ResumeElements getResumeAccess() {
 		return pResume;
@@ -941,6 +1045,18 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getResumeRule() {
 		return getResumeAccess().getRule();
+	}
+	
+	//ResumeSection:
+	//	'resumeSection' name=ID '{'
+	//	resumeitems+=ResumeItems*
+	//	'}';
+	public ResumeSectionElements getResumeSectionAccess() {
+		return pResumeSection;
+	}
+	
+	public ParserRule getResumeSectionRule() {
+		return getResumeSectionAccess().getRule();
 	}
 	
 	//Items:
@@ -951,6 +1067,20 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getItemsRule() {
 		return getItemsAccess().getRule();
+	}
+	
+	//ResumeItems:
+	//	'resumeItem' name=ID '{'
+	//	title+=Items
+	//	date+=Items
+	//	description+=Items
+	//	'}';
+	public ResumeItemsElements getResumeItemsAccess() {
+		return pResumeItems;
+	}
+	
+	public ParserRule getResumeItemsRule() {
+		return getResumeItemsAccess().getRule();
 	}
 	
 	//Description:

@@ -28,6 +28,8 @@ import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeItems;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeSection;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
 import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
@@ -143,7 +145,21 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass resumeSectionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass itemsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass resumeItemsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -608,9 +624,42 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   @Override
-  public EReference getResume_Resumeitems()
+  public EReference getResume_Resumesections()
   {
     return (EReference)resumeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResumeSection()
+  {
+    return resumeSectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResumeSection_Name()
+  {
+    return (EAttribute)resumeSectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResumeSection_Resumeitems()
+  {
+    return (EReference)resumeSectionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -644,6 +693,61 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
   public EReference getItems_Description()
   {
     return (EReference)itemsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResumeItems()
+  {
+    return resumeItemsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResumeItems_Name()
+  {
+    return (EAttribute)resumeItemsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResumeItems_Title()
+  {
+    return (EReference)resumeItemsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResumeItems_Date()
+  {
+    return (EReference)resumeItemsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getResumeItems_Description()
+  {
+    return (EReference)resumeItemsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -887,11 +991,21 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
     contactInformationEClass = createEClass(CONTACT_INFORMATION);
 
     resumeEClass = createEClass(RESUME);
-    createEReference(resumeEClass, RESUME__RESUMEITEMS);
+    createEReference(resumeEClass, RESUME__RESUMESECTIONS);
+
+    resumeSectionEClass = createEClass(RESUME_SECTION);
+    createEAttribute(resumeSectionEClass, RESUME_SECTION__NAME);
+    createEReference(resumeSectionEClass, RESUME_SECTION__RESUMEITEMS);
 
     itemsEClass = createEClass(ITEMS);
     createEAttribute(itemsEClass, ITEMS__NAME);
     createEReference(itemsEClass, ITEMS__DESCRIPTION);
+
+    resumeItemsEClass = createEClass(RESUME_ITEMS);
+    createEAttribute(resumeItemsEClass, RESUME_ITEMS__NAME);
+    createEReference(resumeItemsEClass, RESUME_ITEMS__TITLE);
+    createEReference(resumeItemsEClass, RESUME_ITEMS__DATE);
+    createEReference(resumeItemsEClass, RESUME_ITEMS__DESCRIPTION);
 
     descriptionEClass = createEClass(DESCRIPTION);
     createEAttribute(descriptionEClass, DESCRIPTION__VALUE);
@@ -999,11 +1113,21 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
     initEClass(contactInformationEClass, ContactInformation.class, "ContactInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(resumeEClass, Resume.class, "Resume", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getResume_Resumeitems(), this.getItems(), null, "resumeitems", null, 0, -1, Resume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResume_Resumesections(), this.getResumeSection(), null, "resumesections", null, 0, -1, Resume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(resumeSectionEClass, ResumeSection.class, "ResumeSection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResumeSection_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResumeSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResumeSection_Resumeitems(), this.getResumeItems(), null, "resumeitems", null, 0, -1, ResumeSection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(itemsEClass, Items.class, "Items", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getItems_Name(), ecorePackage.getEString(), "name", null, 0, 1, Items.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getItems_Description(), this.getDescription(), null, "description", null, 0, -1, Items.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(resumeItemsEClass, ResumeItems.class, "ResumeItems", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResumeItems_Name(), ecorePackage.getEString(), "name", null, 0, 1, ResumeItems.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResumeItems_Title(), this.getItems(), null, "title", null, 0, -1, ResumeItems.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResumeItems_Date(), this.getItems(), null, "date", null, 0, -1, ResumeItems.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResumeItems_Description(), this.getItems(), null, "description", null, 0, -1, ResumeItems.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(descriptionEClass, Description.class, "Description", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDescription_Value(), ecorePackage.getEString(), "value", null, 0, 1, Description.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

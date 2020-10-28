@@ -58,13 +58,27 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContactInformation" eSuperTypes="#//Sections"/>
   <eClassifiers xsi:type="ecore:EClass" name="Resume" eSuperTypes="#//Sections">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resumesections" upperBound="-1"
+        eType="#//ResumeSection" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResumeSection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resumeitems" upperBound="-1"
-        eType="#//Items" containment="true"/>
+        eType="#//ResumeItems" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Items">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
         eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResumeItems">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" upperBound="-1"
+        eType="#//Items" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" upperBound="-1" eType="#//Items"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" upperBound="-1"
+        eType="#//Items" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Description">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

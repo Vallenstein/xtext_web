@@ -72,12 +72,26 @@ ContactInformation:
 
 Resume:
 	'resume' name=ID '{'
-		(resumeitems+=Items)*
+		(resumesections+=ResumeSection)*
+	'}'
+;
+
+ResumeSection:
+	'resumeSection' name=ID '{'
+		(resumeitems+=ResumeItems)*
 	'}'
 ;
 
 Items:
 	name=ID ':' description+=Description
+;
+
+ResumeItems:
+	'resumeItem' name=ID '{'
+		title+=Items
+		date+=Items
+		description+=Items
+	'}'
 ;
 
 Description:

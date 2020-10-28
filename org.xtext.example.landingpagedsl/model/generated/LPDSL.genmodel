@@ -50,11 +50,21 @@
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//ContactInformation"/>
     <genClasses ecoreClass="LPDSL.ecore#//Resume">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//Resume/resumeitems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//Resume/resumesections"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//ResumeSection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//ResumeSection/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//ResumeSection/resumeitems"/>
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//Items">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Items/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//Items/description"/>
+    </genClasses>
+    <genClasses ecoreClass="LPDSL.ecore#//ResumeItems">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//ResumeItems/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//ResumeItems/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//ResumeItems/date"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//ResumeItems/description"/>
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//Description">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Description/value"/>

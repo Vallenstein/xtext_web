@@ -25,6 +25,8 @@ import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeItems;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeSection;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
 import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
@@ -198,10 +200,24 @@ public class LPDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LPDSLPackage.RESUME_SECTION:
+      {
+        ResumeSection resumeSection = (ResumeSection)theEObject;
+        T result = caseResumeSection(resumeSection);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LPDSLPackage.ITEMS:
       {
         Items items = (Items)theEObject;
         T result = caseItems(items);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LPDSLPackage.RESUME_ITEMS:
+      {
+        ResumeItems resumeItems = (ResumeItems)theEObject;
+        T result = caseResumeItems(resumeItems);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -477,6 +493,22 @@ public class LPDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Resume Section</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Resume Section</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResumeSection(ResumeSection object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Items</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -488,6 +520,22 @@ public class LPDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseItems(Items object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Resume Items</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Resume Items</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResumeItems(ResumeItems object)
   {
     return null;
   }

@@ -29,6 +29,8 @@ import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeItems;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeSection;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
 import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
@@ -100,7 +102,9 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
       case LPDSLPackage.LINKS: return createLinks();
       case LPDSLPackage.CONTACT_INFORMATION: return createContactInformation();
       case LPDSLPackage.RESUME: return createResume();
+      case LPDSLPackage.RESUME_SECTION: return createResumeSection();
       case LPDSLPackage.ITEMS: return createItems();
+      case LPDSLPackage.RESUME_ITEMS: return createResumeItems();
       case LPDSLPackage.DESCRIPTION: return createDescription();
       case LPDSLPackage.TIME_SPECIFIER: return createTimeSpecifier();
       case LPDSLPackage.INTEGER: return createInteger();
@@ -286,10 +290,34 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
    * @generated
    */
   @Override
+  public ResumeSection createResumeSection()
+  {
+    ResumeSectionImpl resumeSection = new ResumeSectionImpl();
+    return resumeSection;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Items createItems()
   {
     ItemsImpl items = new ItemsImpl();
     return items;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResumeItems createResumeItems()
+  {
+    ResumeItemsImpl resumeItems = new ResumeItemsImpl();
+    return resumeItems;
   }
 
   /**

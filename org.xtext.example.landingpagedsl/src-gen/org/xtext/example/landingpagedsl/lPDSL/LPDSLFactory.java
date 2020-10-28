@@ -150,6 +150,15 @@ public interface LPDSLFactory extends EFactory
   Resume createResume();
 
   /**
+   * Returns a new object of class '<em>Resume Section</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resume Section</em>'.
+   * @generated
+   */
+  ResumeSection createResumeSection();
+
+  /**
    * Returns a new object of class '<em>Items</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -157,6 +166,15 @@ public interface LPDSLFactory extends EFactory
    * @generated
    */
   Items createItems();
+
+  /**
+   * Returns a new object of class '<em>Resume Items</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resume Items</em>'.
+   * @generated
+   */
+  ResumeItems createResumeItems();
 
   /**
    * Returns a new object of class '<em>Description</em>'.

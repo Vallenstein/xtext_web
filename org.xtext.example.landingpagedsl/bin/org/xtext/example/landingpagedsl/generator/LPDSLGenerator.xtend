@@ -147,31 +147,57 @@ class LPDSLGenerator extends AbstractGenerator {
 	private def genResume(Resume res){
 		builder.newLine();
 		builder.append('''
-		<div class="row mb-3" id="«res.getName»">
-			<div class="col">
-				<div class="card">
-					<div class="card-header">
-						Resume
-					</div>
-					<div class="card-deck">
+		<!--Resume-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="card-header">
+		            Resume
+		          </div>
+		          <div class="card">
 		''');
 		
-		for(e : res.resumeitems){
+		for(e : res.resumesections){
+
 			builder.append('''
-			<div class="card">
-				<div class="card-body">
-					<p class="card-text">«e.name»: «e.getDescription.get(0).getValue»</p>
-				</div>
-			</div>
-			''');
+						<div class="card">
+			              <div class="card-body">
+			                <h5 class="card-title">«e.getName»</h5>
+			                <div class="card-text">
+			                  <ul class="list-group list-group-flush">
+            ''');
+            for(resItem : e.resumeitems){
+            	builder.append('''
+            						<li class="list-group-item">
+            							<div class="row justify-content-end">
+            								<div class="col">«resItem.getDate.get(0).getDescription.get(0).getValue»</div>
+            									<div class="col-lg-8">
+            	                          <div>«resItem.getTitle.get(0).getDescription.get(0).getValue»</div>
+            	                          <div class="text-muted">
+            	                          «resItem.getDescription.get(0).getDescription.get(0).getValue»
+            	                          </div>
+            	                        </div>
+            	                      </div>
+            	                    </li>
+            	''');
+            	
+            	}
+    		builder.append('''
+    		                  </ul>
+    		                </div>
+    		              </div>
+    		            </div>
+            ''');	
 		}
 		
 		builder.append('''
+		          </div>
 		        </div>
 		      </div>
 		    </div>
-		  </div>
-		''');
+		''')
+		
+		
 	}
 	
 	private def genAboutMe(AboutMe ab){

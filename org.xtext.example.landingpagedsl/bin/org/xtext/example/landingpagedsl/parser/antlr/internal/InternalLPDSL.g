@@ -918,18 +918,18 @@ ruleResume returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getResumeAccess().getResumeitemsItemsParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getResumeAccess().getResumesectionsResumeSectionParserRuleCall_3_0());
 				}
-				lv_resumeitems_3_0=ruleItems
+				lv_resumesections_3_0=ruleResumeSection
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getResumeRule());
 					}
 					add(
 						$current,
-						"resumeitems",
-						lv_resumeitems_3_0,
-						"org.xtext.example.landingpagedsl.LPDSL.Items");
+						"resumesections",
+						lv_resumesections_3_0,
+						"org.xtext.example.landingpagedsl.LPDSL.ResumeSection");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -937,6 +937,74 @@ ruleResume returns [EObject current=null]
 		otherlv_4='}'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getResumeAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleResumeSection
+entryRuleResumeSection returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResumeSectionRule()); }
+	iv_ruleResumeSection=ruleResumeSection
+	{ $current=$iv_ruleResumeSection.current; }
+	EOF;
+
+// Rule ResumeSection
+ruleResumeSection returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='resumeSection'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResumeSectionAccess().getResumeSectionKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getResumeSectionAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getResumeSectionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getResumeSectionAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResumeSectionAccess().getResumeitemsResumeItemsParserRuleCall_3_0());
+				}
+				lv_resumeitems_3_0=ruleResumeItems
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResumeSectionRule());
+					}
+					add(
+						$current,
+						"resumeitems",
+						lv_resumeitems_3_0,
+						"org.xtext.example.landingpagedsl.LPDSL.ResumeItems");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getResumeSectionAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -998,6 +1066,112 @@ ruleItems returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleResumeItems
+entryRuleResumeItems returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResumeItemsRule()); }
+	iv_ruleResumeItems=ruleResumeItems
+	{ $current=$iv_ruleResumeItems.current; }
+	EOF;
+
+// Rule ResumeItems
+ruleResumeItems returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='resumeItem'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getResumeItemsAccess().getResumeItemKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getResumeItemsAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getResumeItemsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getResumeItemsAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResumeItemsAccess().getTitleItemsParserRuleCall_3_0());
+				}
+				lv_title_3_0=ruleItems
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResumeItemsRule());
+					}
+					add(
+						$current,
+						"title",
+						lv_title_3_0,
+						"org.xtext.example.landingpagedsl.LPDSL.Items");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResumeItemsAccess().getDateItemsParserRuleCall_4_0());
+				}
+				lv_date_4_0=ruleItems
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResumeItemsRule());
+					}
+					add(
+						$current,
+						"date",
+						lv_date_4_0,
+						"org.xtext.example.landingpagedsl.LPDSL.Items");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResumeItemsAccess().getDescriptionItemsParserRuleCall_5_0());
+				}
+				lv_description_5_0=ruleItems
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResumeItemsRule());
+					}
+					add(
+						$current,
+						"description",
+						lv_description_5_0,
+						"org.xtext.example.landingpagedsl.LPDSL.Items");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getResumeItemsAccess().getRightCurlyBracketKeyword_6());
+		}
 	)
 ;
 

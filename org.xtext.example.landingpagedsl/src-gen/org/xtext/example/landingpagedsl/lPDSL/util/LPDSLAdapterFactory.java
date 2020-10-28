@@ -27,6 +27,8 @@ import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeItems;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeSection;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
 import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
@@ -166,9 +168,19 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
         return createResumeAdapter();
       }
       @Override
+      public Adapter caseResumeSection(ResumeSection object)
+      {
+        return createResumeSectionAdapter();
+      }
+      @Override
       public Adapter caseItems(Items object)
       {
         return createItemsAdapter();
+      }
+      @Override
+      public Adapter caseResumeItems(ResumeItems object)
+      {
+        return createResumeItemsAdapter();
       }
       @Override
       public Adapter caseDescription(Description object)
@@ -433,6 +445,21 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeSection <em>Resume Section</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeSection
+   * @generated
+   */
+  public Adapter createResumeSectionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.Items <em>Items</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -443,6 +470,21 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createItemsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeItems <em>Resume Items</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeItems
+   * @generated
+   */
+  public Adapter createResumeItemsAdapter()
   {
     return null;
   }

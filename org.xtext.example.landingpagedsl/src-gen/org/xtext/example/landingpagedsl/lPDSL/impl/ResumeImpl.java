@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.landingpagedsl.lPDSL.Items;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.xtext.example.landingpagedsl.lPDSL.Resume;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeImpl#getResumeitems <em>Resumeitems</em>}</li>
+ *   <li>{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeImpl#getResumesections <em>Resumesections</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,14 +35,14 @@ import org.xtext.example.landingpagedsl.lPDSL.Resume;
 public class ResumeImpl extends SectionsImpl implements Resume
 {
   /**
-   * The cached value of the '{@link #getResumeitems() <em>Resumeitems</em>}' containment reference list.
+   * The cached value of the '{@link #getResumesections() <em>Resumesections</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResumeitems()
+   * @see #getResumesections()
    * @generated
    * @ordered
    */
-  protected EList<Items> resumeitems;
+  protected EList<ResumeSection> resumesections;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class ResumeImpl extends SectionsImpl implements Resume
    * @generated
    */
   @Override
-  public EList<Items> getResumeitems()
+  public EList<ResumeSection> getResumesections()
   {
-    if (resumeitems == null)
+    if (resumesections == null)
     {
-      resumeitems = new EObjectContainmentEList<Items>(Items.class, this, LPDSLPackage.RESUME__RESUMEITEMS);
+      resumesections = new EObjectContainmentEList<ResumeSection>(ResumeSection.class, this, LPDSLPackage.RESUME__RESUMESECTIONS);
     }
-    return resumeitems;
+    return resumesections;
   }
 
   /**
@@ -90,8 +90,8 @@ public class ResumeImpl extends SectionsImpl implements Resume
   {
     switch (featureID)
     {
-      case LPDSLPackage.RESUME__RESUMEITEMS:
-        return ((InternalEList<?>)getResumeitems()).basicRemove(otherEnd, msgs);
+      case LPDSLPackage.RESUME__RESUMESECTIONS:
+        return ((InternalEList<?>)getResumesections()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class ResumeImpl extends SectionsImpl implements Resume
   {
     switch (featureID)
     {
-      case LPDSLPackage.RESUME__RESUMEITEMS:
-        return getResumeitems();
+      case LPDSLPackage.RESUME__RESUMESECTIONS:
+        return getResumesections();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class ResumeImpl extends SectionsImpl implements Resume
   {
     switch (featureID)
     {
-      case LPDSLPackage.RESUME__RESUMEITEMS:
-        getResumeitems().clear();
-        getResumeitems().addAll((Collection<? extends Items>)newValue);
+      case LPDSLPackage.RESUME__RESUMESECTIONS:
+        getResumesections().clear();
+        getResumesections().addAll((Collection<? extends ResumeSection>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class ResumeImpl extends SectionsImpl implements Resume
   {
     switch (featureID)
     {
-      case LPDSLPackage.RESUME__RESUMEITEMS:
-        getResumeitems().clear();
+      case LPDSLPackage.RESUME__RESUMESECTIONS:
+        getResumesections().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class ResumeImpl extends SectionsImpl implements Resume
   {
     switch (featureID)
     {
-      case LPDSLPackage.RESUME__RESUMEITEMS:
-        return resumeitems != null && !resumeitems.isEmpty();
+      case LPDSLPackage.RESUME__RESUMESECTIONS:
+        return resumesections != null && !resumesections.isEmpty();
     }
     return super.eIsSet(featureID);
   }

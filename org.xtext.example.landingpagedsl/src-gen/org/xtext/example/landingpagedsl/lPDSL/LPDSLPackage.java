@@ -540,13 +540,13 @@ public interface LPDSLPackage extends EPackage
   int RESUME__NAME = SECTIONS__NAME;
 
   /**
-   * The feature id for the '<em><b>Resumeitems</b></em>' containment reference list.
+   * The feature id for the '<em><b>Resumesections</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RESUME__RESUMEITEMS = SECTIONS_FEATURE_COUNT + 0;
+  int RESUME__RESUMESECTIONS = SECTIONS_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Resume</em>' class.
@@ -558,6 +558,43 @@ public interface LPDSLPackage extends EPackage
   int RESUME_FEATURE_COUNT = SECTIONS_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeSectionImpl <em>Resume Section</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.ResumeSectionImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getResumeSection()
+   * @generated
+   */
+  int RESUME_SECTION = 14;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_SECTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Resumeitems</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_SECTION__RESUMEITEMS = 1;
+
+  /**
+   * The number of structural features of the '<em>Resume Section</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_SECTION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ItemsImpl <em>Items</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -565,7 +602,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getItems()
    * @generated
    */
-  int ITEMS = 14;
+  int ITEMS = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -595,6 +632,61 @@ public interface LPDSLPackage extends EPackage
   int ITEMS_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeItemsImpl <em>Resume Items</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.ResumeItemsImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getResumeItems()
+   * @generated
+   */
+  int RESUME_ITEMS = 16;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_ITEMS__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_ITEMS__TITLE = 1;
+
+  /**
+   * The feature id for the '<em><b>Date</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_ITEMS__DATE = 2;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_ITEMS__DESCRIPTION = 3;
+
+  /**
+   * The number of structural features of the '<em>Resume Items</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESUME_ITEMS_FEATURE_COUNT = 4;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.DescriptionImpl <em>Description</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -602,7 +694,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getDescription()
    * @generated
    */
-  int DESCRIPTION = 15;
+  int DESCRIPTION = 17;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -630,7 +722,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getTimeSpecifier()
    * @generated
    */
-  int TIME_SPECIFIER = 16;
+  int TIME_SPECIFIER = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -667,7 +759,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getInteger()
    * @generated
    */
-  int INTEGER = 17;
+  int INTEGER = 19;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -695,7 +787,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getAboutMe()
    * @generated
    */
-  int ABOUT_ME = 18;
+  int ABOUT_ME = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -741,7 +833,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPicture()
    * @generated
    */
-  int PICTURE = 19;
+  int PICTURE = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -778,7 +870,7 @@ public interface LPDSLPackage extends EPackage
    * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getImagePath()
    * @generated
    */
-  int IMAGE_PATH = 20;
+  int IMAGE_PATH = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1138,15 +1230,47 @@ public interface LPDSLPackage extends EPackage
   EClass getResume();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.Resume#getResumeitems <em>Resumeitems</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.Resume#getResumesections <em>Resumesections</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Resumeitems</em>'.
-   * @see org.xtext.example.landingpagedsl.lPDSL.Resume#getResumeitems()
+   * @return the meta object for the containment reference list '<em>Resumesections</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Resume#getResumesections()
    * @see #getResume()
    * @generated
    */
-  EReference getResume_Resumeitems();
+  EReference getResume_Resumesections();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeSection <em>Resume Section</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Resume Section</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeSection
+   * @generated
+   */
+  EClass getResumeSection();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeSection#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeSection#getName()
+   * @see #getResumeSection()
+   * @generated
+   */
+  EAttribute getResumeSection_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeSection#getResumeitems <em>Resumeitems</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Resumeitems</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeSection#getResumeitems()
+   * @see #getResumeSection()
+   * @generated
+   */
+  EReference getResumeSection_Resumeitems();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.Items <em>Items</em>}'.
@@ -1179,6 +1303,60 @@ public interface LPDSLPackage extends EPackage
    * @generated
    */
   EReference getItems_Description();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeItems <em>Resume Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Resume Items</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeItems
+   * @generated
+   */
+  EClass getResumeItems();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getName()
+   * @see #getResumeItems()
+   * @generated
+   */
+  EAttribute getResumeItems_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Title</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getTitle()
+   * @see #getResumeItems()
+   * @generated
+   */
+  EReference getResumeItems_Title();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getDate <em>Date</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Date</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getDate()
+   * @see #getResumeItems()
+   * @generated
+   */
+  EReference getResumeItems_Date();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Description</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.ResumeItems#getDescription()
+   * @see #getResumeItems()
+   * @generated
+   */
+  EReference getResumeItems_Description();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.Description <em>Description</em>}'.
@@ -1647,12 +1825,38 @@ public interface LPDSLPackage extends EPackage
     EClass RESUME = eINSTANCE.getResume();
 
     /**
+     * The meta object literal for the '<em><b>Resumesections</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESUME__RESUMESECTIONS = eINSTANCE.getResume_Resumesections();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeSectionImpl <em>Resume Section</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.ResumeSectionImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getResumeSection()
+     * @generated
+     */
+    EClass RESUME_SECTION = eINSTANCE.getResumeSection();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESUME_SECTION__NAME = eINSTANCE.getResumeSection_Name();
+
+    /**
      * The meta object literal for the '<em><b>Resumeitems</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RESUME__RESUMEITEMS = eINSTANCE.getResume_Resumeitems();
+    EReference RESUME_SECTION__RESUMEITEMS = eINSTANCE.getResumeSection_Resumeitems();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ItemsImpl <em>Items</em>}' class.
@@ -1679,6 +1883,48 @@ public interface LPDSLPackage extends EPackage
      * @generated
      */
     EReference ITEMS__DESCRIPTION = eINSTANCE.getItems_Description();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.ResumeItemsImpl <em>Resume Items</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.ResumeItemsImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getResumeItems()
+     * @generated
+     */
+    EClass RESUME_ITEMS = eINSTANCE.getResumeItems();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESUME_ITEMS__NAME = eINSTANCE.getResumeItems_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESUME_ITEMS__TITLE = eINSTANCE.getResumeItems_Title();
+
+    /**
+     * The meta object literal for the '<em><b>Date</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESUME_ITEMS__DATE = eINSTANCE.getResumeItems_Date();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RESUME_ITEMS__DESCRIPTION = eINSTANCE.getResumeItems_Description();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.DescriptionImpl <em>Description</em>}' class.

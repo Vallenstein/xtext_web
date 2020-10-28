@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.landingpagedsl.lPDSL.Resume#getResumeitems <em>Resumeitems</em>}</li>
+ *   <li>{@link org.xtext.example.landingpagedsl.lPDSL.Resume#getResumesections <em>Resumesections</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage#getResume()
@@ -24,15 +24,15 @@ import org.eclipse.emf.common.util.EList;
 public interface Resume extends Sections
 {
   /**
-   * Returns the value of the '<em><b>Resumeitems</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.landingpagedsl.lPDSL.Items}.
+   * Returns the value of the '<em><b>Resumesections</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.landingpagedsl.lPDSL.ResumeSection}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Resumeitems</em>' containment reference list.
-   * @see org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage#getResume_Resumeitems()
+   * @return the value of the '<em>Resumesections</em>' containment reference list.
+   * @see org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage#getResume_Resumesections()
    * @model containment="true"
    * @generated
    */
-  EList<Items> getResumeitems();
+  EList<ResumeSection> getResumesections();
 
 } // Resume

@@ -30,6 +30,8 @@ import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeItems;
+import org.xtext.example.landingpagedsl.lPDSL.ResumeSection;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
 import org.xtext.example.landingpagedsl.lPDSL.TimeSpecifier;
 import org.xtext.example.landingpagedsl.lPDSL.URL;
@@ -96,6 +98,12 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case LPDSLPackage.RESUME:
 				sequence_Resume(context, (Resume) semanticObject); 
+				return; 
+			case LPDSLPackage.RESUME_ITEMS:
+				sequence_ResumeItems(context, (ResumeItems) semanticObject); 
+				return; 
+			case LPDSLPackage.RESUME_SECTION:
+				sequence_ResumeSection(context, (ResumeSection) semanticObject); 
 				return; 
 			case LPDSLPackage.TAB_ITEMS:
 				sequence_TabItems(context, (TabItems) semanticObject); 
@@ -330,11 +338,35 @@ public class LPDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     ResumeItems returns ResumeItems
+	 *
+	 * Constraint:
+	 *     (name=ID title+=Items date+=Items description+=Items)
+	 */
+	protected void sequence_ResumeItems(ISerializationContext context, ResumeItems semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResumeSection returns ResumeSection
+	 *
+	 * Constraint:
+	 *     (name=ID resumeitems+=ResumeItems*)
+	 */
+	protected void sequence_ResumeSection(ISerializationContext context, ResumeSection semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Sections returns Resume
 	 *     Resume returns Resume
 	 *
 	 * Constraint:
-	 *     (name=ID resumeitems+=Items*)
+	 *     (name=ID resumesections+=ResumeSection*)
 	 */
 	protected void sequence_Resume(ISerializationContext context, Resume semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
