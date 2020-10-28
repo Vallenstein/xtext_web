@@ -14,8 +14,14 @@ import org.xtext.example.landingpagedsl.lPDSL.Description;
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent
 import org.xtext.example.landingpagedsl.lPDSL.PageBody
+import org.xtext.example.landingpagedsl.lPDSL.Links
+
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter
+import org.xtext.example.landingpagedsl.lPDSL.Resume
+import org.xtext.example.landingpagedsl.lPDSL.AboutMe
+import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel
+import org.xtext.example.landingpagedsl.lPDSL.ContactInformation
 
 /**
  * Generates code from your model files on save.
@@ -91,312 +97,93 @@ class LPDSLGenerator extends AbstractGenerator {
 			'''
 		);
 		for(title : header.title){
-			genTab(title.description.getContent().toString());
+			var str = title.getDescription.get(0).getValue
+			genTitle(str);
 		}
 		builder.newLine();
 		builder.append('''
 		      
 		      <div class="nav-scroller py-1 mb-2">
 		        <nav class="nav d-flex justify-content-between">
-		          <a class="p-2 text-muted" href="#">Item</a>
-		          <a class="p-2 text-muted" href="#">Tab</a>
-		          <a class="p-2 text-muted" href="#">Jesper is ok</a>
-		          <a class="p-2 text-muted" href="#">Steinar is nice</a>
+		          ''');
+		          
+		for(tab : header.tabs){
+			var str = tab.getDescription.get(0).getValue
+			genTab(str);
+		}
+		    
+		builder.newLine();
+		builder.append('''
 		        </nav>
 		      </div>
 		    </nav>''');
 	}
 	
-	private def genTab(String t){
+	private def genTitle(String t){
 		builder.newLine();
 		builder.append('''
 		<div class="navbar-brand">쳓�</div>
 		''')
 	}
 	
-	private def genBody(PageBody body){
+	private def genTab(String t){
 		builder.newLine();
-		builder.append('''<!--About Me-->
-		    <div class="row mb-3" id="test1">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
+		builder.append('''
+		<a class="p-2 text-muted" href="#">쳓�</a>
+		''')
+	}
+	
+	private def genBody(PageBody body){
 		
-		    <!--Resume-->
-		    <div class="row mb-3">
+		for(section : body.getSections()){
+			if (section instanceof Resume){
+				genResume(section);
+			}
+			
+			if (section instanceof AboutMe){
+				
+			}
+			
+			if (section instanceof PictureCarousel){
+				
+			}
+			
+			if (section instanceof ContactInformation){
+				
+			}
+			
+			if (section instanceof Links){
+				
+			}
+		}
+	}
+	
+	private def genResume(Resume res){
+		builder.newLine();
+		builder.append('''
+		<div class="row mb-3">
 		      <div class="col">
 		        <div class="card">
 		          <div class="card-header">
 		            Resume
 		          </div>
 		          <div class="card-deck">
-		            <div class="card">
-		              <div class="card-body">
-		                <p class="card-text">Kindergarten</p>
-		              </div>
-		            </div>
-		            <div class="card">
-		              <div class="card-body">
-		                <p class="card-text">Elementary School</p>
-		              </div>
-		            </div>
-		            <div class="card">
-		              <div class="card-body">
-		                <p class="card-text">Primary School</p>
-		              </div>
-		            </div>
-		            <div class="card">
-		              <div class="card-body">
-		                <p class="card-text">Holy shit, afterwards i went to university just to write a longer text!</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
+		''');
 		
-		    <!--Links-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="card-header">
-		            Links
-		          </div>
-		          <div class="card-group">
-		            <div class="card text-center">
-		              <div class="card-body">
-		                <a class="btn btn-info" href="https://github.com/Vallenstein/xtext_web" role="button">Github</a>
-		              </div>
-		            </div>
-		            <div class="card text-center">
-		              <div class="card-body">
-		                <a class="btn btn-info" href="https://github.com/Vallenstein/xtext_web" role="button">Facebook</a>
-		              </div>
-		            </div>
-		            <div class="card text-center">
-		              <div class="card-body">
-		                <a class="btn btn-info" href="https://github.com/Vallenstein/xtext_web" role="button">Twitch</a>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
+		for(e : res.resumeitems){
+			builder.append('''<div class="card">
+	              <div class="card-body">
+	                <p class="card-text">첿.name�: 첿.getDescription.get(0).getValue�</p>
+	              </div>
+	            </div>
+			''');
+		}
 		
-		    <!--Picture Carousel-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="card-header">
-		            Pictures
-		          </div>
-		          <div class="col card-body text-center">
-		            <div id="carouselExampleIndicators" class="carousel slide ride" data-ride="carousel" data-interval="4000">
-		              <ol class="carousel-indicators">
-		                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-		                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-		                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-		              </ol>
-		              <div class="carousel-inner">
-		                <div class="carousel-item active">
-		                  <img src="./unnamed.jpg" class="d-block w-100" alt="...">
-		                </div>
-		                <div class="carousel-item">
-		                  <img src="./unnamed.jpg" class="d-block w-100" alt="...">
-		                </div>
-		                <div class="carousel-item">
-		                  <img src="./unnamed.jpg" class="d-block w-100" alt="...">
-		                </div>
-		              </div>
-		            </div>
-		          </div>
+		builder.append('''
 		        </div>
 		      </div>
 		    </div>
-		
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="card-header">
-		            Contact Us
-		          </div>
-		          <form class="mb-3 mt-3">
-		            <div class="form-group col-4">
-		              <label for="exampleFormControlInput1"><h5>Your Email Address</h5  ></label>
-		              <input type="email" class="form-control" id="email" placeholder="name@example.com">
-		            </div>
-		            <div class="form-group col-11">
-		              <label for="exampleFormControlTextarea1"><h5>Message</h5></label>
-		              <textarea class="form-control" id="message" rows="3"></textarea>
-		            </div>
-		            <div class="d-flex justify-content-center">
-		            <button class="btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-		          </div>
-		          </form>
-		        </div>
-		      </div>
-		    </div>
-		
-		
-		
-		    <!--TRASH-->
-		
-		    <!--About Me-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-		                  additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		    <!--About Me-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-		                  additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		    <!--About Me-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-		                  additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		    <!--About Me-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-		                  additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		    <!--About Me-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-		                  additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		    <!--About Me-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-		                  additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		    <!--About Me-->
-		    <div class="row mb-3" id="test2">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
-		              <img src="./unnamed.jpg" class="card-img" alt="...">
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
-		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-		                  additional
-		                  content. This content is a little bit longer.</p>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-		
-		    <!--Content End-->''');
+		''');
 	}
 	
 	private def genFooter(PageFooter footer){
