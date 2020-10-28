@@ -3,21 +3,15 @@
  */
 package org.xtext.example.landingpagedsl.validation;
 import java.util.*; 
-
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.validation.Check;
 import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
 import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
-import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
-import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
-import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
-import org.xtext.example.landingpagedsl.lPDSL.Sections;
+import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
-import com.google.common.base.Objects;
 import java.util.regex.*;
 /**
  * This class contains custom validation rules. 
@@ -31,6 +25,7 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 	//TODO: all tab names corresponds to a section name
 	public static final String INVALID_NAME = "invalidName";
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Check
 	public void tabHasSection (LandingPage page) {
 		List tabNames = new ArrayList();
@@ -128,11 +123,11 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 	}
 	
 	@Check 
-	public void validURL(QualifiedPath path) {
+	public void validURL(Path path) {
 		Pattern p = Pattern.compile("^(http:\\/\\/|https:\\/\\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$");
 		Matcher m = p.matcher(path.getValue());
 		if (!m.matches()){
-			warning("Your URL might not be valid", LPDSLPackage.Literals.QUALIFIED_PATH__VALUE);
+			warning("Your URL might not be valid", LPDSLPackage.Literals.PATH__VALUE);
 		}
 		
 				

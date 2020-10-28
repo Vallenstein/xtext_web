@@ -424,9 +424,9 @@ ruleURL returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getURLAccess().getPathQualifiedPathParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getURLAccess().getPathPathParserRuleCall_2_0());
 				}
-				lv_path_2_0=ruleQualifiedPath
+				lv_path_2_0=rulePath
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getURLRule());
@@ -435,7 +435,7 @@ ruleURL returns [EObject current=null]
 						$current,
 						"path",
 						lv_path_2_0,
-						"org.xtext.example.landingpagedsl.LPDSL.QualifiedPath");
+						"org.xtext.example.landingpagedsl.LPDSL.Path");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -443,15 +443,15 @@ ruleURL returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleQualifiedPath
-entryRuleQualifiedPath returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getQualifiedPathRule()); }
-	iv_ruleQualifiedPath=ruleQualifiedPath
-	{ $current=$iv_ruleQualifiedPath.current; }
+// Entry rule entryRulePath
+entryRulePath returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPathRule()); }
+	iv_rulePath=rulePath
+	{ $current=$iv_rulePath.current; }
 	EOF;
 
-// Rule QualifiedPath
-ruleQualifiedPath returns [EObject current=null]
+// Rule Path
+rulePath returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -460,33 +460,21 @@ ruleQualifiedPath returns [EObject current=null]
 }:
 	(
 		(
-			(
-				lv_value_0_0=RULE_STRING
-				{
-					newLeafNode(lv_value_0_0, grammarAccess.getQualifiedPathAccess().getValueSTRINGTerminalRuleCall_0_0());
+			lv_value_0_0=RULE_STRING
+			{
+				newLeafNode(lv_value_0_0, grammarAccess.getPathAccess().getValueSTRINGTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getPathRule());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getQualifiedPathRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_0_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
+				setWithLastConsumed(
+					$current,
+					"value",
+					lv_value_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
+			}
 		)
-		(
-			otherlv_1='.'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getQualifiedPathAccess().getFullStopKeyword_1_0());
-			}
-			this_STRING_2=RULE_STRING
-			{
-				newLeafNode(this_STRING_2, grammarAccess.getQualifiedPathAccess().getSTRINGTerminalRuleCall_1_1());
-			}
-		)*
 	)
 ;
 

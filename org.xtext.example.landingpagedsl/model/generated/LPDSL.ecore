@@ -28,10 +28,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="URL">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//QualifiedPath"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//Path"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QualifiedPath">
+  <eClassifiers xsi:type="ecore:EClass" name="Path">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PageHeader" eSuperTypes="#//PageComponent">

@@ -23,9 +23,9 @@ import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
-import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
@@ -126,9 +126,9 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
         return createURLAdapter();
       }
       @Override
-      public Adapter caseQualifiedPath(QualifiedPath object)
+      public Adapter casePath(Path object)
       {
-        return createQualifiedPathAdapter();
+        return createPathAdapter();
       }
       @Override
       public Adapter casePageHeader(PageHeader object)
@@ -313,16 +313,16 @@ public class LPDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath <em>Qualified Path</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.landingpagedsl.lPDSL.Path <em>Path</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.landingpagedsl.lPDSL.QualifiedPath
+   * @see org.xtext.example.landingpagedsl.lPDSL.Path
    * @generated
    */
-  public Adapter createQualifiedPathAdapter()
+  public Adapter createPathAdapter()
   {
     return null;
   }

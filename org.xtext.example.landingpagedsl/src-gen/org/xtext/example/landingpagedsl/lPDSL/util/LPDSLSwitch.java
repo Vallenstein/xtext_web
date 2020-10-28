@@ -21,9 +21,9 @@ import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
-import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
@@ -137,10 +137,10 @@ public class LPDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LPDSLPackage.QUALIFIED_PATH:
+      case LPDSLPackage.PATH:
       {
-        QualifiedPath qualifiedPath = (QualifiedPath)theEObject;
-        T result = caseQualifiedPath(qualifiedPath);
+        Path path = (Path)theEObject;
+        T result = casePath(path);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -349,17 +349,17 @@ public class LPDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Qualified Path</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Path</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Qualified Path</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Path</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseQualifiedPath(QualifiedPath object)
+  public T casePath(Path object)
   {
     return null;
   }

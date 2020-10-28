@@ -3,19 +3,13 @@
  */
 package org.xtext.example.landingpagedsl.generator
 
-import com.google.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
-import org.xtext.example.landingpagedsl.lPDSL.Items;
-import org.xtext.example.landingpagedsl.lPDSL.Description;
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import org.xtext.example.landingpagedsl.lPDSL.PageComponent
 import org.xtext.example.landingpagedsl.lPDSL.PageBody
 import org.xtext.example.landingpagedsl.lPDSL.Links
-
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter
 import org.xtext.example.landingpagedsl.lPDSL.Resume
@@ -97,10 +91,10 @@ class LPDSLGenerator extends AbstractGenerator {
 			'''
 		);
 		for(title : header.title){
-			var str = title.getDescription.get(0).getValue
-			genTitle(str);
+			builder.append('''
+			<div class="navbar-brand">«title.getDescription.get(0).getValue»</div>
+			''')
 		}
-		builder.newLine();
 		builder.append('''
 		      
 		      <div class="nav-scroller py-1 mb-2">
@@ -108,8 +102,9 @@ class LPDSLGenerator extends AbstractGenerator {
 		          ''');
 		          
 		for(tab : header.tabs){
-			var str = tab.getDescription.get(0).getValue
-			genTab(str);
+			builder.append('''
+			<a class="p-2 text-muted" href="#«tab.getName»">«tab.getDescription.get(0).getValue»</a>
+			''')
 		}
 		    
 		builder.newLine();
@@ -119,19 +114,7 @@ class LPDSLGenerator extends AbstractGenerator {
 		    </nav>''');
 	}
 	
-	private def genTitle(String t){
-		builder.newLine();
-		builder.append('''
-		<div class="navbar-brand">«t»</div>
-		''')
-	}
-	
-	private def genTab(String t){
-		builder.newLine();
-		builder.append('''
-		<a class="p-2 text-muted" href="#">«t»</a>
-		''')
-	}
+
 	
 	private def genBody(PageBody body){
 		
@@ -141,18 +124,21 @@ class LPDSLGenerator extends AbstractGenerator {
 			}
 			
 			if (section instanceof AboutMe){
+				genAboutMe(section);
 				
 			}
 			
 			if (section instanceof PictureCarousel){
+				genPictureCarousel(section);
 				
 			}
 			
 			if (section instanceof ContactInformation){
-				
+				genContactInformation(section);
 			}
 			
 			if (section instanceof Links){
+				genLinks(section);
 				
 			}
 		}
@@ -161,21 +147,22 @@ class LPDSLGenerator extends AbstractGenerator {
 	private def genResume(Resume res){
 		builder.newLine();
 		builder.append('''
-		<div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="card-header">
-		            Resume
-		          </div>
-		          <div class="card-deck">
+		<div class="row mb-3" id="«res.getName»">
+			<div class="col">
+				<div class="card">
+					<div class="card-header">
+						Resume
+					</div>
+					<div class="card-deck">
 		''');
 		
 		for(e : res.resumeitems){
-			builder.append('''<div class="card">
-	              <div class="card-body">
-	                <p class="card-text">«e.name»: «e.getDescription.get(0).getValue»</p>
-	              </div>
-	            </div>
+			builder.append('''
+			<div class="card">
+				<div class="card-body">
+					<p class="card-text">«e.name»: «e.getDescription.get(0).getValue»</p>
+				</div>
+			</div>
 			''');
 		}
 		
@@ -183,61 +170,184 @@ class LPDSLGenerator extends AbstractGenerator {
 		        </div>
 		      </div>
 		    </div>
+		  </div>
 		''');
 	}
 	
+	private def genAboutMe(AboutMe ab){
+		builder.newLine();
+		builder.append('''
+		<div class="row mb-3" id="«ab.getName»">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		''')
+		
+		for(pic : ab.picture){
+			//«e.getDescription.get(0).getValue»
+			builder.append('''
+			<img src="«pic.getImagepath.get(0).getValue»" class="card-img" alt="...">
+			''');
+		}
+		
+		builder.append('''
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		''')
+		
+		for(desc : ab.description){
+			builder.append('''
+			<p class="card-text">«desc.getDescription.get(0).getValue»</p>
+			''');
+		}
+		
+		
+		builder.append('''
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		''')
+	}
+
+	private def genPictureCarousel(PictureCarousel car){
+		builder.newLine();
+		builder.append('''
+		<div class="row mb-3" id="«car.getName»">
+		      <div class="col">
+		        <div class="card">
+		          <div class="card-header">
+		            Pictures
+		          </div>
+		          <div class="col card-body text-center">
+		''')
+		
+		for(time : car.timer){
+			builder.append('''
+					  	<div id="carouselExampleIndicators" class="carousel slide ride" data-ride="carousel" data-interval="«time.getTime.get(0).getValue»">
+			''');
+		}
+		builder.append('''
+		              <ol class="carousel-indicators">
+		''');
+		var counter = 0;
+		for(pic : car.picture){
+			builder.append('''
+			<li data-target="#carouselExampleIndicators" data-slide-to="«counter»"«IF counter == 0» class="active"«ENDIF»></li>
+			''')
+			counter++;
+		}
+		builder.append('''
+		              </ol>
+		              <div class="carousel-inner">
+		''');
+		counter = 0;
+		for(pic : car.picture){
+			builder.append('''
+			<div class="carousel-item«IF counter == 0» active «ENDIF»">
+			  <img src="«pic.getImagepath.get(0).getValue»" class="d-block w-100" alt="...">
+			</div>
+			''')
+			counter++;
+		}
+		builder.append('''
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		''')
+	}
+
+	private def genContactInformation(ContactInformation con){
+		builder.newLine();
+		builder.append('''
+		<div class="row mb-3" id="«con.getName»">
+		      <div class="col">
+		        <div class="card">
+		          <div class="card-header">
+		            Contact Me
+		          </div>
+		          <form class="mb-3 mt-3">
+		            <div class="form-group col-4">
+		              <label for="exampleFormControlInput1">
+		                <h5>Your Email Address</h5>
+		              </label>
+		              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+		            </div>
+		            <div class="form-group col-11">
+		              <label for="exampleFormControlTextarea1">
+		                <h5>Message</h5>
+		              </label>
+		              <textarea class="form-control" id="message" rows="3"></textarea>
+		            </div>
+		            <div class="d-flex justify-content-center">
+		              <button class="btn btn-primary btn-lg" type="submit">Send</button>
+		            </div>
+		          </form>
+		        </div>
+		      </div>
+		    </div>
+		''');
+	}
+
+	private def genLinks(Links links){
+		builder.newLine();
+		builder.append('''
+    <div class="row mb-3" id="«links.getName»">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Links
+          </div>
+          <div class="card-group">
+		''')
+		
+		for (l : links.links){
+			builder.append('''<div class="card text-center">
+              <div class="card-body">
+                <a class="btn btn-info" href="«l.getLink.get(0).getPath.get(0).getValue»" role="button">«l.getText.get(0).getDescription.get(0).value»</a>
+              </div>
+            </div>
+            ''');
+		}
+		builder.append('''
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		''');
+		
+		
+	}
+
 	private def genFooter(PageFooter footer){
 		builder.newLine();
-		builder.append('''<!--Footer-->
+		builder.append('''
 		    <nav class="navbar navbar-light navbar-expand-lg bg-light">
 		      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-		        <li class="nav-item">
-		          <a class="nav-link" href="#">FooterLinks</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="#">Link</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="#">Link2</a>
-		        </li>
-		      </ul>
-		      <p class="float-right">
-		        <a href="#">Back to top</a>
-		      </p>
-		    </nav>
-		
 		''')
+		
+		for (l : footer.links){
+			builder.append('''
+			<li class="nav-item">
+				<a class="nav-link" href="«l.getLink.get(0).getPath.get(0).getValue»">«l.getText.get(0).getDescription.get(0).value»</a>
+			</li>
+            ''');
+		}
+		builder.append('''
+	      </ul>
+	      <p class="float-right">
+	        <a href="#">Back to top</a>
+	      </p>
+	    </nav>
+		''');
 	}
 		
 }
-
-
-/*'''
-		<!DOCTYPE html>
-		<html lang="en">
-		<head>
-		  <title>Landin Page</title>
-		  <meta charset="utf-8">
-		  <meta name="viewport" content="width=device-width, initial-scale=1">
-		  <meta name="author" content="">
-		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-		  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		    crossorigin="anonymous"></script>
-		  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-		    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-		    crossorigin="anonymous"></script>
-		  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-		    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-		    crossorigin="anonymous"></script>
-		  <style>
-		    body {
-		      background-color: grey;
-		    }
-		  </style>
-		</head>
-		<body>
-		
-		</body>
-		</html>
-''' */

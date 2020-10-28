@@ -50,7 +50,7 @@ public interface URL extends EObject
 
   /**
    * Returns the value of the '<em><b>Path</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath}.
+   * The list contents are of type {@link org.xtext.example.landingpagedsl.lPDSL.Path}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Path</em>' containment reference list.
@@ -58,6 +58,6 @@ public interface URL extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<QualifiedPath> getPath();
+  EList<Path> getPath();
 
 } // URL

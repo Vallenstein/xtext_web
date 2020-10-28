@@ -37,8 +37,6 @@ public class LPDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPageFooterAccess().getGroup(), "rule__PageFooter__Group__0");
 			builder.put(grammarAccess.getLinkItemAccess().getGroup(), "rule__LinkItem__Group__0");
 			builder.put(grammarAccess.getURLAccess().getGroup(), "rule__URL__Group__0");
-			builder.put(grammarAccess.getQualifiedPathAccess().getGroup(), "rule__QualifiedPath__Group__0");
-			builder.put(grammarAccess.getQualifiedPathAccess().getGroup_1(), "rule__QualifiedPath__Group_1__0");
 			builder.put(grammarAccess.getPageHeaderAccess().getGroup(), "rule__PageHeader__Group__0");
 			builder.put(grammarAccess.getTabItemsAccess().getGroup(), "rule__TabItems__Group__0");
 			builder.put(grammarAccess.getPageBodyAccess().getGroup(), "rule__PageBody__Group__0");
@@ -60,7 +58,7 @@ public class LPDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLinkItemAccess().getLinkAssignment_4(), "rule__LinkItem__LinkAssignment_4");
 			builder.put(grammarAccess.getURLAccess().getNameAssignment_0(), "rule__URL__NameAssignment_0");
 			builder.put(grammarAccess.getURLAccess().getPathAssignment_2(), "rule__URL__PathAssignment_2");
-			builder.put(grammarAccess.getQualifiedPathAccess().getValueAssignment_0(), "rule__QualifiedPath__ValueAssignment_0");
+			builder.put(grammarAccess.getPathAccess().getValueAssignment(), "rule__Path__ValueAssignment");
 			builder.put(grammarAccess.getPageHeaderAccess().getNameAssignment_1(), "rule__PageHeader__NameAssignment_1");
 			builder.put(grammarAccess.getPageHeaderAccess().getTitleAssignment_3(), "rule__PageHeader__TitleAssignment_3");
 			builder.put(grammarAccess.getPageHeaderAccess().getTabsAssignment_4(), "rule__PageHeader__TabsAssignment_4");

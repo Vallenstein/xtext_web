@@ -308,14 +308,14 @@ public interface LPDSLPackage extends EPackage
   int URL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl <em>Qualified Path</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PathImpl <em>Path</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl
-   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getQualifiedPath()
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.PathImpl
+   * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPath()
    * @generated
    */
-  int QUALIFIED_PATH = 6;
+  int PATH = 6;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -324,16 +324,16 @@ public interface LPDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUALIFIED_PATH__VALUE = 0;
+  int PATH__VALUE = 0;
 
   /**
-   * The number of structural features of the '<em>Qualified Path</em>' class.
+   * The number of structural features of the '<em>Path</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int QUALIFIED_PATH_FEATURE_COUNT = 1;
+  int PATH_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PageHeaderImpl <em>Page Header</em>}' class.
@@ -970,25 +970,25 @@ public interface LPDSLPackage extends EPackage
   EReference getURL_Path();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath <em>Qualified Path</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.Path <em>Path</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Qualified Path</em>'.
-   * @see org.xtext.example.landingpagedsl.lPDSL.QualifiedPath
+   * @return the meta object for class '<em>Path</em>'.
+   * @see org.xtext.example.landingpagedsl.lPDSL.Path
    * @generated
    */
-  EClass getQualifiedPath();
+  EClass getPath();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.QualifiedPath#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.landingpagedsl.lPDSL.Path#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.example.landingpagedsl.lPDSL.QualifiedPath#getValue()
-   * @see #getQualifiedPath()
+   * @see org.xtext.example.landingpagedsl.lPDSL.Path#getValue()
+   * @see #getPath()
    * @generated
    */
-  EAttribute getQualifiedPath_Value();
+  EAttribute getPath_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.landingpagedsl.lPDSL.PageHeader <em>Page Header</em>}'.
@@ -1503,14 +1503,14 @@ public interface LPDSLPackage extends EPackage
     EReference URL__PATH = eINSTANCE.getURL_Path();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl <em>Qualified Path</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PathImpl <em>Path</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.landingpagedsl.lPDSL.impl.QualifiedPathImpl
-     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getQualifiedPath()
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.PathImpl
+     * @see org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl#getPath()
      * @generated
      */
-    EClass QUALIFIED_PATH = eINSTANCE.getQualifiedPath();
+    EClass PATH = eINSTANCE.getPath();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1518,7 +1518,7 @@ public interface LPDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute QUALIFIED_PATH__VALUE = eINSTANCE.getQualifiedPath_Value();
+    EAttribute PATH__VALUE = eINSTANCE.getPath_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.landingpagedsl.lPDSL.impl.PageHeaderImpl <em>Page Header</em>}' class.

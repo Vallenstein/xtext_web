@@ -78,13 +78,13 @@ public interface LPDSLFactory extends EFactory
   URL createURL();
 
   /**
-   * Returns a new object of class '<em>Qualified Path</em>'.
+   * Returns a new object of class '<em>Path</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Qualified Path</em>'.
+   * @return a new object of class '<em>Path</em>'.
    * @generated
    */
-  QualifiedPath createQualifiedPath();
+  Path createPath();
 
   /**
    * Returns a new object of class '<em>Page Header</em>'.

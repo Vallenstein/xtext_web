@@ -208,13 +208,13 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cPathAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPathQualifiedPathParserRuleCall_2_0 = (RuleCall)cPathAssignment_2.eContents().get(0);
+		private final RuleCall cPathPathParserRuleCall_2_0 = (RuleCall)cPathAssignment_2.eContents().get(0);
 		
 		//URL:
-		//	name=ID ':' path+=QualifiedPath;
+		//	name=ID ':' path+=Path;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ':' path+=QualifiedPath
+		//name=ID ':' path+=Path
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -226,42 +226,26 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//path+=QualifiedPath
+		//path+=Path
 		public Assignment getPathAssignment_2() { return cPathAssignment_2; }
 		
-		//QualifiedPath
-		public RuleCall getPathQualifiedPathParserRuleCall_2_0() { return cPathQualifiedPathParserRuleCall_2_0; }
+		//Path
+		public RuleCall getPathPathParserRuleCall_2_0() { return cPathPathParserRuleCall_2_0; }
 	}
-	public class QualifiedPathElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.QualifiedPath");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+	public class PathElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.Path");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
-		//QualifiedPath:
-		//	value=STRING ('.' STRING)*;
+		//Path:
+		//	value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=STRING ('.' STRING)*
-		public Group getGroup() { return cGroup; }
-		
 		//value=STRING
-		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+		public Assignment getValueAssignment() { return cValueAssignment; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0_0() { return cValueSTRINGTerminalRuleCall_0_0; }
-		
-		//('.' STRING)*
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_1_1() { return cSTRINGTerminalRuleCall_1_1; }
+		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
 	public class PageHeaderElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.landingpagedsl.LPDSL.PageHeader");
@@ -726,7 +710,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final PageFooterElements pPageFooter;
 	private final LinkItemElements pLinkItem;
 	private final URLElements pURL;
-	private final QualifiedPathElements pQualifiedPath;
+	private final PathElements pPath;
 	private final PageHeaderElements pPageHeader;
 	private final TabItemsElements pTabItems;
 	private final PageBodyElements pPageBody;
@@ -757,7 +741,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pPageFooter = new PageFooterElements();
 		this.pLinkItem = new LinkItemElements();
 		this.pURL = new URLElements();
-		this.pQualifiedPath = new QualifiedPathElements();
+		this.pPath = new PathElements();
 		this.pPageHeader = new PageHeaderElements();
 		this.pTabItems = new TabItemsElements();
 		this.pPageBody = new PageBodyElements();
@@ -860,7 +844,7 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//URL:
-	//	name=ID ':' path+=QualifiedPath;
+	//	name=ID ':' path+=Path;
 	public URLElements getURLAccess() {
 		return pURL;
 	}
@@ -869,14 +853,14 @@ public class LPDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getURLAccess().getRule();
 	}
 	
-	//QualifiedPath:
-	//	value=STRING ('.' STRING)*;
-	public QualifiedPathElements getQualifiedPathAccess() {
-		return pQualifiedPath;
+	//Path:
+	//	value=STRING;
+	public PathElements getPathAccess() {
+		return pPath;
 	}
 	
-	public ParserRule getQualifiedPathRule() {
-		return getQualifiedPathAccess().getRule();
+	public ParserRule getPathRule() {
+		return getPathAccess().getRule();
 	}
 	
 	//PageHeader:

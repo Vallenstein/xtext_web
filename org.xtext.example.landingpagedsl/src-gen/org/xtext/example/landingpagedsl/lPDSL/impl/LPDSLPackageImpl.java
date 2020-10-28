@@ -24,9 +24,9 @@ import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
-import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
@@ -87,7 +87,7 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass qualifiedPathEClass = null;
+  private EClass pathEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -432,9 +432,9 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   @Override
-  public EClass getQualifiedPath()
+  public EClass getPath()
   {
-    return qualifiedPathEClass;
+    return pathEClass;
   }
 
   /**
@@ -443,9 +443,9 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getQualifiedPath_Value()
+  public EAttribute getPath_Value()
   {
-    return (EAttribute)qualifiedPathEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)pathEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -864,8 +864,8 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
     createEAttribute(urlEClass, URL__NAME);
     createEReference(urlEClass, URL__PATH);
 
-    qualifiedPathEClass = createEClass(QUALIFIED_PATH);
-    createEAttribute(qualifiedPathEClass, QUALIFIED_PATH__VALUE);
+    pathEClass = createEClass(PATH);
+    createEAttribute(pathEClass, PATH__VALUE);
 
     pageHeaderEClass = createEClass(PAGE_HEADER);
     createEReference(pageHeaderEClass, PAGE_HEADER__TITLE);
@@ -974,10 +974,10 @@ public class LPDSLPackageImpl extends EPackageImpl implements LPDSLPackage
 
     initEClass(urlEClass, org.xtext.example.landingpagedsl.lPDSL.URL.class, "URL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getURL_Name(), ecorePackage.getEString(), "name", null, 0, 1, org.xtext.example.landingpagedsl.lPDSL.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getURL_Path(), this.getQualifiedPath(), null, "path", null, 0, -1, org.xtext.example.landingpagedsl.lPDSL.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getURL_Path(), this.getPath(), null, "path", null, 0, -1, org.xtext.example.landingpagedsl.lPDSL.URL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(qualifiedPathEClass, QualifiedPath.class, "QualifiedPath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getQualifiedPath_Value(), ecorePackage.getEString(), "value", null, 0, 1, QualifiedPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(pathEClass, Path.class, "Path", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPath_Value(), ecorePackage.getEString(), "value", null, 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pageHeaderEClass, PageHeader.class, "PageHeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPageHeader_Title(), this.getItems(), null, "title", null, 0, -1, PageHeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

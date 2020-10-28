@@ -30,11 +30,11 @@ LinkItem:
 ;
 
 URL:
-	name=ID ':' path+=QualifiedPath
+	name=ID ':' path+=Path
 ;
 
-QualifiedPath:
-	value=STRING ('.' STRING)*
+Path:
+	value=STRING
 ;
 
 PageHeader:

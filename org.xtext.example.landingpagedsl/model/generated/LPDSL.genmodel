@@ -28,8 +28,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//URL/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//URL/path"/>
     </genClasses>
-    <genClasses ecoreClass="LPDSL.ecore#//QualifiedPath">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//QualifiedPath/value"/>
+    <genClasses ecoreClass="LPDSL.ecore#//Path">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LPDSL.ecore#//Path/value"/>
     </genClasses>
     <genClasses ecoreClass="LPDSL.ecore#//PageHeader">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LPDSL.ecore#//PageHeader/title"/>

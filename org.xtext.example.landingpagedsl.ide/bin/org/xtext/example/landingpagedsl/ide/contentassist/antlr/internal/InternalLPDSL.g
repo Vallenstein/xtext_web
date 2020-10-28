@@ -199,25 +199,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleQualifiedPath
-entryRuleQualifiedPath
+// Entry rule entryRulePath
+entryRulePath
 :
-{ before(grammarAccess.getQualifiedPathRule()); }
-	 ruleQualifiedPath
-{ after(grammarAccess.getQualifiedPathRule()); } 
+{ before(grammarAccess.getPathRule()); }
+	 rulePath
+{ after(grammarAccess.getPathRule()); } 
 	 EOF 
 ;
 
-// Rule QualifiedPath
-ruleQualifiedPath 
+// Rule Path
+rulePath 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getQualifiedPathAccess().getGroup()); }
-		(rule__QualifiedPath__Group__0)
-		{ after(grammarAccess.getQualifiedPathAccess().getGroup()); }
+		{ before(grammarAccess.getPathAccess().getValueAssignment()); }
+		(rule__Path__ValueAssignment)
+		{ after(grammarAccess.getPathAccess().getValueAssignment()); }
 	)
 ;
 finally {
@@ -1173,114 +1173,6 @@ rule__URL__Group__2__Impl
 	{ before(grammarAccess.getURLAccess().getPathAssignment_2()); }
 	(rule__URL__PathAssignment_2)
 	{ after(grammarAccess.getURLAccess().getPathAssignment_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__QualifiedPath__Group__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__QualifiedPath__Group__0__Impl
-	rule__QualifiedPath__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__QualifiedPath__Group__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getQualifiedPathAccess().getValueAssignment_0()); }
-	(rule__QualifiedPath__ValueAssignment_0)
-	{ after(grammarAccess.getQualifiedPathAccess().getValueAssignment_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__QualifiedPath__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__QualifiedPath__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__QualifiedPath__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getQualifiedPathAccess().getGroup_1()); }
-	(rule__QualifiedPath__Group_1__0)*
-	{ after(grammarAccess.getQualifiedPathAccess().getGroup_1()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__QualifiedPath__Group_1__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__QualifiedPath__Group_1__0__Impl
-	rule__QualifiedPath__Group_1__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__QualifiedPath__Group_1__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getQualifiedPathAccess().getFullStopKeyword_1_0()); }
-	'.'
-	{ after(grammarAccess.getQualifiedPathAccess().getFullStopKeyword_1_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__QualifiedPath__Group_1__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__QualifiedPath__Group_1__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__QualifiedPath__Group_1__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getQualifiedPathAccess().getSTRINGTerminalRuleCall_1_1()); }
-	RULE_STRING
-	{ after(grammarAccess.getQualifiedPathAccess().getSTRINGTerminalRuleCall_1_1()); }
 )
 ;
 finally {
@@ -2605,24 +2497,24 @@ rule__URL__PathAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getURLAccess().getPathQualifiedPathParserRuleCall_2_0()); }
-		ruleQualifiedPath
-		{ after(grammarAccess.getURLAccess().getPathQualifiedPathParserRuleCall_2_0()); }
+		{ before(grammarAccess.getURLAccess().getPathPathParserRuleCall_2_0()); }
+		rulePath
+		{ after(grammarAccess.getURLAccess().getPathPathParserRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__QualifiedPath__ValueAssignment_0
+rule__Path__ValueAssignment
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getQualifiedPathAccess().getValueSTRINGTerminalRuleCall_0_0()); }
+		{ before(grammarAccess.getPathAccess().getValueSTRINGTerminalRuleCall_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getQualifiedPathAccess().getValueSTRINGTerminalRuleCall_0_0()); }
+		{ after(grammarAccess.getPathAccess().getValueSTRINGTerminalRuleCall_0()); }
 	)
 ;
 finally {

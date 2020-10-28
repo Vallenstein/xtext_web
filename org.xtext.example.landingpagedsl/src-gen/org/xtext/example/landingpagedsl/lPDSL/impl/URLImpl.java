@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
-import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
+import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.URL;
 
 /**
@@ -67,7 +67,7 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
    * @generated
    * @ordered
    */
-  protected EList<QualifiedPath> path;
+  protected EList<Path> path;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,11 +121,11 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
    * @generated
    */
   @Override
-  public EList<QualifiedPath> getPath()
+  public EList<Path> getPath()
   {
     if (path == null)
     {
-      path = new EObjectContainmentEList<QualifiedPath>(QualifiedPath.class, this, LPDSLPackage.URL__PATH);
+      path = new EObjectContainmentEList<Path>(Path.class, this, LPDSLPackage.URL__PATH);
     }
     return path;
   }
@@ -180,7 +180,7 @@ public class URLImpl extends MinimalEObjectImpl.Container implements URL
         return;
       case LPDSLPackage.URL__PATH:
         getPath().clear();
-        getPath().addAll((Collection<? extends QualifiedPath>)newValue);
+        getPath().addAll((Collection<? extends Path>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

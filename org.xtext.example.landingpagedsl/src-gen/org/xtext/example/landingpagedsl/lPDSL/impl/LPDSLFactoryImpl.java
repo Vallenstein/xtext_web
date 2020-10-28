@@ -25,9 +25,9 @@ import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
 import org.xtext.example.landingpagedsl.lPDSL.PageFooter;
 import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
+import org.xtext.example.landingpagedsl.lPDSL.Path;
 import org.xtext.example.landingpagedsl.lPDSL.Picture;
 import org.xtext.example.landingpagedsl.lPDSL.PictureCarousel;
-import org.xtext.example.landingpagedsl.lPDSL.QualifiedPath;
 import org.xtext.example.landingpagedsl.lPDSL.Resume;
 import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
@@ -92,7 +92,7 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
       case LPDSLPackage.PAGE_FOOTER: return createPageFooter();
       case LPDSLPackage.LINK_ITEM: return createLinkItem();
       case LPDSLPackage.URL: return createURL();
-      case LPDSLPackage.QUALIFIED_PATH: return createQualifiedPath();
+      case LPDSLPackage.PATH: return createPath();
       case LPDSLPackage.PAGE_HEADER: return createPageHeader();
       case LPDSLPackage.TAB_ITEMS: return createTabItems();
       case LPDSLPackage.PAGE_BODY: return createPageBody();
@@ -190,10 +190,10 @@ public class LPDSLFactoryImpl extends EFactoryImpl implements LPDSLFactory
    * @generated
    */
   @Override
-  public QualifiedPath createQualifiedPath()
+  public Path createPath()
   {
-    QualifiedPathImpl qualifiedPath = new QualifiedPathImpl();
-    return qualifiedPath;
+    PathImpl path = new PathImpl();
+    return path;
   }
 
   /**
