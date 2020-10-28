@@ -23,15 +23,17 @@ import org.xtext.example.landingpagedsl.lPDSL.ContactInformation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class LPDSLGenerator extends AbstractGenerator {
-	
+
 	StringConcatenation builder = new StringConcatenation();
-	
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		builder = new StringConcatenation();
 		builder.append('''
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
+		
+
 		  <title>Landin Page</title>
 		  <meta charset="utf-8">
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,292 +52,287 @@ class LPDSLGenerator extends AbstractGenerator {
 		    body {
 		      background-color: grey;
 		    }
+			html {
+			  scroll-behavior: smooth;
+			}
 		  </style>
 		</head>
 		<body>
 		<div class="container">''');
-		
-		for (component : resource.allContents.toIterable)
-		{
-			if (component instanceof PageHeader){
+
+		for (component : resource.allContents.toIterable) {
+			if (component instanceof PageHeader) {
 				genHeader(component);
 			}
-			
-			if (component instanceof PageBody){
+
+			if (component instanceof PageBody) {
 				genBody(component);
 			}
 
-			if (component instanceof PageFooter){
+			if (component instanceof PageFooter) {
 				genFooter(component);
 			}
 		}
 
-		
-		
 		builder.append('''
-		</div>
-		</body>
-		</html>
+			</div>
+			</body>
+			</html>
 		''')
 		fsa.generateFile("huh.html", builder);
-		
+
 	}
-	
-	
-	private def genHeader(PageHeader header){
+
+	private def genHeader(PageHeader header) {
 		builder.newLine();
 		builder.append(
 			'''
-			<!--Navbar-->
-					    <nav class="navbar  navbar-dark bg-dark mb-3">
+				<!--Navbar-->
+						    <nav class="navbar  navbar-dark bg-dark mb-3">
 			'''
 		);
-		for(title : header.title){
+		for (title : header.title) {
 			builder.append('''
-			<div class="navbar-brand">«title.getDescription.get(0).getValue»</div>
+				<div class="navbar-brand">«title.getDescription.get(0).getValue»</div>
 			''')
 		}
 		builder.append('''
-		      
-		      <div class="nav-scroller py-1 mb-2">
-		        <nav class="nav d-flex justify-content-between">
-		          ''');
-		          
-		for(tab : header.tabs){
+			
+			<div class="nav-scroller py-1 mb-2">
+			  <nav class="nav d-flex justify-content-between">
+		    ''');
+
+		for (tab : header.tabs) {
 			builder.append('''
-			<a class="p-2 text-muted" href="#«tab.getName»">«tab.getDescription.get(0).getValue»</a>
+				<a class="p-2 text-muted" href="#«tab.getName»">«tab.getDescription.get(0).getValue»</a>
 			''')
 		}
-		    
+
 		builder.newLine();
 		builder.append('''
-		        </nav>
-		      </div>
-		    </nav>''');
+		    </nav>
+		  </div>
+		</nav>''');
 	}
-	
 
-	
-	private def genBody(PageBody body){
-		
-		for(section : body.getSections()){
-			if (section instanceof Resume){
+	private def genBody(PageBody body) {
+
+		for (section : body.getSections()) {
+			if (section instanceof Resume) {
 				genResume(section);
 			}
-			
-			if (section instanceof AboutMe){
+
+			if (section instanceof AboutMe) {
 				genAboutMe(section);
-				
+
 			}
-			
-			if (section instanceof PictureCarousel){
+
+			if (section instanceof PictureCarousel) {
 				genPictureCarousel(section);
-				
+
 			}
-			
-			if (section instanceof ContactInformation){
+
+			if (section instanceof ContactInformation) {
 				genContactInformation(section);
 			}
-			
-			if (section instanceof Links){
+
+			if (section instanceof Links) {
 				genLinks(section);
-				
+
 			}
 		}
 	}
-	
-	private def genResume(Resume res){
+
+	private def genResume(Resume res) {
 		builder.newLine();
 		builder.append('''
-		<!--Resume-->
-		    <div class="row mb-3">
-		      <div class="col">
-		        <div class="card">
-		          <div class="card-header">
-		            Resume
-		          </div>
-		          <div class="card">
+			<!--Resume-->
+			    <div class="row mb-3">
+			      <div class="col">
+			        <div class="card">
+			          <div class="card-header">
+			            Resume
+			          </div>
+			          <div class="card">
 		''');
-		
-		for(e : res.resumesections){
+
+		for (e : res.resumesections) {
 
 			builder.append('''
-						<div class="card">
-			              <div class="card-body">
-			                <h5 class="card-title">«e.getName»</h5>
-			                <div class="card-text">
-			                  <ul class="list-group list-group-flush">
-            ''');
-            for(resItem : e.resumeitems){
-            	builder.append('''
-            						<li class="list-group-item">
-            							<div class="row justify-content-end">
-            								<div class="col">«resItem.getDate.get(0).getDescription.get(0).getValue»</div>
-            									<div class="col-lg-8">
-            	                          <div>«resItem.getTitle.get(0).getDescription.get(0).getValue»</div>
-            	                          <div class="text-muted">
-            	                          «resItem.getDescription.get(0).getDescription.get(0).getValue»
-            	                          </div>
-            	                        </div>
-            	                      </div>
-            	                    </li>
-            	''');
-            	
-            	}
-    		builder.append('''
-    		                  </ul>
-    		                </div>
-    		              </div>
-    		            </div>
-            ''');	
+				<div class="card">
+				           <div class="card-body">
+				             <h5 class="card-title">«e.getName»</h5>
+				             <div class="card-text">
+				               <ul class="list-group list-group-flush">
+			      ''');
+			for (resItem : e.resumeitems) {
+				builder.append('''
+					<li class="list-group-item">
+						<div class="row justify-content-end">
+							<div class="col">«resItem.getDate.get(0).getDescription.get(0).getValue»</div>
+								<div class="col-lg-8">
+								                  <div>«resItem.getTitle.get(0).getDescription.get(0).getValue»</div>
+								                  <div class="text-muted">
+								                  «resItem.getDescription.get(0).getDescription.get(0).getValue»
+								                  </div>
+								                </div>
+								              </div>
+								            </li>
+				''');
+
+			}
+			builder.append('''
+				      </ul>
+				    </div>
+				  </div>
+				</div>
+			''');
 		}
-		
+
 		builder.append('''
-		          </div>
-		        </div>
-		      </div>
-		    </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		''')
-		
-		
+
 	}
-	
-	private def genAboutMe(AboutMe ab){
+
+	private def genAboutMe(AboutMe ab) {
 		builder.newLine();
 		builder.append('''
-		<div class="row mb-3" id="«ab.getName»">
-		      <div class="col">
-		        <div class="card">
-		          <div class="row">
-		            <div class="col-md-5">
+			<div class="row mb-3" id="«ab.getName»">
+			      <div class="col">
+			        <div class="card">
+			          <div class="row">
+			            <div class="col-md-5">
 		''')
-		
-		for(pic : ab.picture){
-			//«e.getDescription.get(0).getValue»
+
+		for (pic : ab.picture) {
+			// «e.getDescription.get(0).getValue»
 			builder.append('''
-			<img src="«pic.getImagepath.get(0).getValue»" class="card-img" alt="...">
+				<img src="«pic.getImagepath.get(0).getValue»" class="card-img" alt="...">
 			''');
 		}
-		
+
 		builder.append('''
-		            </div>
-		            <div class="col-md-7">
-		              <div class="card-body">
-		                <h5 class="card-title">About Me</h5>
+			</div>
+			<div class="col-md-7">
+			  <div class="card-body">
+			    <h5 class="card-title">About Me</h5>
 		''')
-		
-		for(desc : ab.description){
+
+		for (desc : ab.description) {
 			builder.append('''
-			<p class="card-text">«desc.getDescription.get(0).getValue»</p>
+				<p class="card-text">«desc.getDescription.get(0).getValue»</p>
 			''');
 		}
-		
-		
+
 		builder.append('''
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		''')
 	}
 
-	private def genPictureCarousel(PictureCarousel car){
+	private def genPictureCarousel(PictureCarousel car) {
 		builder.newLine();
 		builder.append('''
-		<div class="row mb-3" id="«car.getName»">
-		      <div class="col">
-		        <div class="card">
-		          <div class="card-header">
-		            Pictures
-		          </div>
-		          <div class="col card-body text-center">
+			<div class="row mb-3" id="«car.getName»">
+			      <div class="col">
+			        <div class="card">
+			          <div class="card-header">
+			            Pictures
+			          </div>
+			          <div class="col card-body text-center">
 		''')
-		
-		for(time : car.timer){
+
+		for (time : car.timer) {
 			builder.append('''
-					  	<div id="carouselExampleIndicators" class="carousel slide ride" data-ride="carousel" data-interval="«time.getTime.get(0).getValue»">
+				<div id="carouselExampleIndicators" class="carousel slide ride" data-ride="carousel" data-interval="«time.getTime.get(0).getValue»">
 			''');
 		}
 		builder.append('''
-		              <ol class="carousel-indicators">
+			<ol class="carousel-indicators">
 		''');
 		var counter = 0;
-		for(pic : car.picture){
+		for (pic : car.picture) {
 			builder.append('''
-			<li data-target="#carouselExampleIndicators" data-slide-to="«counter»"«IF counter == 0» class="active"«ENDIF»></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="«counter»"«IF counter == 0» class="active"«ENDIF»></li>
 			''')
 			counter++;
 		}
 		builder.append('''
-		              </ol>
-		              <div class="carousel-inner">
+			</ol>
+			<div class="carousel-inner">
 		''');
 		counter = 0;
-		for(pic : car.picture){
+		for (pic : car.picture) {
 			builder.append('''
-			<div class="carousel-item«IF counter == 0» active «ENDIF»">
-			  <img src="«pic.getImagepath.get(0).getValue»" class="d-block w-100" alt="...">
-			</div>
+				<div class="carousel-item«IF counter == 0» active «ENDIF»">
+				  <img src="«pic.getImagepath.get(0).getValue»" class="d-block w-100" alt="...">
+				</div>
 			''')
 			counter++;
 		}
 		builder.append('''
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		''')
 	}
 
-	private def genContactInformation(ContactInformation con){
+	private def genContactInformation(ContactInformation con) {
 		builder.newLine();
 		builder.append('''
-		<div class="row mb-3" id="«con.getName»">
-		      <div class="col">
-		        <div class="card">
-		          <div class="card-header">
-		            Contact Me
-		          </div>
-		          <form class="mb-3 mt-3">
-		            <div class="form-group col-4">
-		              <label for="exampleFormControlInput1">
-		                <h5>Your Email Address</h5>
-		              </label>
-		              <input type="email" class="form-control" id="email" placeholder="name@example.com">
-		            </div>
-		            <div class="form-group col-11">
-		              <label for="exampleFormControlTextarea1">
-		                <h5>Message</h5>
-		              </label>
-		              <textarea class="form-control" id="message" rows="3"></textarea>
-		            </div>
-		            <div class="d-flex justify-content-center">
-		              <button class="btn btn-primary btn-lg" type="submit">Send</button>
-		            </div>
-		          </form>
-		        </div>
-		      </div>
-		    </div>
+			<div class="row mb-3" id="«con.getName»">
+			      <div class="col">
+			        <div class="card">
+			          <div class="card-header">
+			            Contact Me
+			          </div>
+			          <form class="mb-3 mt-3">
+			            <div class="form-group col-4">
+			              <label for="exampleFormControlInput1">
+			                <h5>Your Email Address</h5>
+			              </label>
+			              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+			            </div>
+			            <div class="form-group col-11">
+			              <label for="exampleFormControlTextarea1">
+			                <h5>Message</h5>
+			              </label>
+			              <textarea class="form-control" id="message" rows="3"></textarea>
+			            </div>
+			            <div class="d-flex justify-content-center">
+			              <button class="btn btn-primary btn-lg" type="submit">Send</button>
+			            </div>
+			          </form>
+			        </div>
+			      </div>
+			    </div>
 		''');
 	}
 
-	private def genLinks(Links links){
+	private def genLinks(Links links) {
 		builder.newLine();
 		builder.append('''
-    <div class="row mb-3" id="«links.getName»">
-      <div class="col">
-        <div class="card">
-          <div class="card-header">
-            Links
-          </div>
-          <div class="card-group">
+			<div class="row mb-3" id="«links.getName»">
+			  <div class="col">
+			    <div class="card">
+			      <div class="card-header">
+			        Links
+			      </div>
+			      <div class="card-group">
 		''')
-		
-		for (l : links.links){
+
+		for (l : links.links) {
 			builder.append('''<div class="card text-center">
               <div class="card-body">
                 <a class="btn btn-info" href="«l.getLink.get(0).getPath.get(0).getValue»" role="button">«l.getText.get(0).getDescription.get(0).value»</a>
@@ -344,36 +341,35 @@ class LPDSLGenerator extends AbstractGenerator {
             ''');
 		}
 		builder.append('''
-		          </div>
-		        </div>
-		      </div>
-		    </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		''');
-		
-		
+
 	}
 
-	private def genFooter(PageFooter footer){
+	private def genFooter(PageFooter footer) {
 		builder.newLine();
 		builder.append('''
-		    <nav class="navbar navbar-light navbar-expand-lg bg-light">
-		      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<nav class="navbar navbar-light navbar-expand-lg bg-light">
+			  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 		''')
-		
-		for (l : footer.links){
+
+		for (l : footer.links) {
 			builder.append('''
-			<li class="nav-item">
-				<a class="nav-link" href="«l.getLink.get(0).getPath.get(0).getValue»">«l.getText.get(0).getDescription.get(0).value»</a>
-			</li>
-            ''');
+				<li class="nav-item">
+					<a class="nav-link" href="«l.getLink.get(0).getPath.get(0).getValue»">«l.getText.get(0).getDescription.get(0).value»</a>
+				</li>
+			         ''');
 		}
 		builder.append('''
-	      </ul>
-	      <p class="float-right">
-	        <a href="#">Back to top</a>
-	      </p>
-	    </nav>
+			  </ul>
+			  <div class="float-right">
+			   <a type="button" href="#" class="btn btn-outline-secondary">Take me upstairs!</a>
+			   </div>
+			</nav>
 		''');
 	}
-		
+
 }
