@@ -13,6 +13,9 @@ import org.xtext.example.landingpagedsl.lPDSL.Items;
 import org.xtext.example.landingpagedsl.lPDSL.Description;
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent
+import org.xtext.example.landingpagedsl.lPDSL.PageBody
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.xtext.example.landingpagedsl.lPDSL.PageFooter
 
 /**
  * Generates code from your model files on save.
@@ -20,15 +23,413 @@ import org.xtext.example.landingpagedsl.lPDSL.PageComponent
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class LPDSLGenerator extends AbstractGenerator {
-		
+	
+	StringConcatenation builder = new StringConcatenation();
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-				
-		for (NavBar : resource.allContents.toIterable.filter(PageHeader))
-		fsa.generateFile("huh.html", '''
+		builder = new StringConcatenation();
+		builder.append('''
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
-		  <title>«if (NavBar!==null){NavBar.name.toString}else{"Landing Page"}»</title>
+		  <title>Landin Page</title>
+		  <meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <meta name="author" content="">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		    crossorigin="anonymous"></script>
+		  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		    crossorigin="anonymous"></script>
+		  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+		    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+		    crossorigin="anonymous"></script>
+		  <style>
+		    body {
+		      background-color: grey;
+		    }
+		  </style>
+		</head>
+		<body>
+		<div class="container">''');
+		
+		for (component : resource.allContents.toIterable)
+		{
+			if (component instanceof PageHeader){
+				genHeader(component);
+			}
+			
+			if (component instanceof PageBody){
+				genBody(component);
+			}
+
+			if (component instanceof PageFooter){
+				genFooter(component);
+			}
+		}
+
+		
+		
+		builder.append('''
+		</div>
+		</body>
+		</html>
+		''')
+		fsa.generateFile("huh.html", builder);
+		
+	}
+	
+	
+	private def genHeader(PageHeader header){
+		builder.newLine();
+		builder.append(
+			'''
+			<!--Navbar-->
+					    <nav class="navbar  navbar-dark bg-dark mb-3">
+			'''
+		);
+		for(title : header.title){
+			genTab(title.description.getContent().toString());
+		}
+		builder.newLine();
+		builder.append('''
+		      
+		      <div class="nav-scroller py-1 mb-2">
+		        <nav class="nav d-flex justify-content-between">
+		          <a class="p-2 text-muted" href="#">Item</a>
+		          <a class="p-2 text-muted" href="#">Tab</a>
+		          <a class="p-2 text-muted" href="#">Jesper is ok</a>
+		          <a class="p-2 text-muted" href="#">Steinar is nice</a>
+		        </nav>
+		      </div>
+		    </nav>''');
+	}
+	
+	private def genTab(String t){
+		builder.newLine();
+		builder.append('''
+		<div class="navbar-brand">«t»</div>
+		''')
+	}
+	
+	private def genBody(PageBody body){
+		builder.newLine();
+		builder.append('''<!--About Me-->
+		    <div class="row mb-3" id="test1">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <!--Resume-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="card-header">
+		            Resume
+		          </div>
+		          <div class="card-deck">
+		            <div class="card">
+		              <div class="card-body">
+		                <p class="card-text">Kindergarten</p>
+		              </div>
+		            </div>
+		            <div class="card">
+		              <div class="card-body">
+		                <p class="card-text">Elementary School</p>
+		              </div>
+		            </div>
+		            <div class="card">
+		              <div class="card-body">
+		                <p class="card-text">Primary School</p>
+		              </div>
+		            </div>
+		            <div class="card">
+		              <div class="card-body">
+		                <p class="card-text">Holy shit, afterwards i went to university just to write a longer text!</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <!--Links-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="card-header">
+		            Links
+		          </div>
+		          <div class="card-group">
+		            <div class="card text-center">
+		              <div class="card-body">
+		                <a class="btn btn-info" href="https://github.com/Vallenstein/xtext_web" role="button">Github</a>
+		              </div>
+		            </div>
+		            <div class="card text-center">
+		              <div class="card-body">
+		                <a class="btn btn-info" href="https://github.com/Vallenstein/xtext_web" role="button">Facebook</a>
+		              </div>
+		            </div>
+		            <div class="card text-center">
+		              <div class="card-body">
+		                <a class="btn btn-info" href="https://github.com/Vallenstein/xtext_web" role="button">Twitch</a>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <!--Picture Carousel-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="card-header">
+		            Pictures
+		          </div>
+		          <div class="col card-body text-center">
+		            <div id="carouselExampleIndicators" class="carousel slide ride" data-ride="carousel" data-interval="4000">
+		              <ol class="carousel-indicators">
+		                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		              </ol>
+		              <div class="carousel-inner">
+		                <div class="carousel-item active">
+		                  <img src="./unnamed.jpg" class="d-block w-100" alt="...">
+		                </div>
+		                <div class="carousel-item">
+		                  <img src="./unnamed.jpg" class="d-block w-100" alt="...">
+		                </div>
+		                <div class="carousel-item">
+		                  <img src="./unnamed.jpg" class="d-block w-100" alt="...">
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="card-header">
+		            Contact Us
+		          </div>
+		          <form class="mb-3 mt-3">
+		            <div class="form-group col-4">
+		              <label for="exampleFormControlInput1"><h5>Your Email Address</h5  ></label>
+		              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+		            </div>
+		            <div class="form-group col-11">
+		              <label for="exampleFormControlTextarea1"><h5>Message</h5></label>
+		              <textarea class="form-control" id="message" rows="3"></textarea>
+		            </div>
+		            <div class="d-flex justify-content-center">
+		            <button class="btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+		          </div>
+		          </form>
+		        </div>
+		      </div>
+		    </div>
+		
+		
+		
+		    <!--TRASH-->
+		
+		    <!--About Me-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+		                  additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!--About Me-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+		                  additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!--About Me-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+		                  additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!--About Me-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+		                  additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!--About Me-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+		                  additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!--About Me-->
+		    <div class="row mb-3">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+		                  additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		    <!--About Me-->
+		    <div class="row mb-3" id="test2">
+		      <div class="col">
+		        <div class="card">
+		          <div class="row">
+		            <div class="col-md-5">
+		              <img src="./unnamed.jpg" class="card-img" alt="...">
+		            </div>
+		            <div class="col-md-7">
+		              <div class="card-body">
+		                <h5 class="card-title">About Me</h5>
+		                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+		                  additional
+		                  content. This content is a little bit longer.</p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		
+		    <!--Content End-->''');
+	}
+	
+	private def genFooter(PageFooter footer){
+		builder.newLine();
+		builder.append('''<!--Footer-->
+		    <nav class="navbar navbar-light navbar-expand-lg bg-light">
+		      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">FooterLinks</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">Link</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">Link2</a>
+		        </li>
+		      </ul>
+		      <p class="float-right">
+		        <a href="#">Back to top</a>
+		      </p>
+		    </nav>
+		
+		''')
+	}
+		
+}
+
+
+/*'''
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+		  <title>Landin Page</title>
 		  <meta charset="utf-8">
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
 		  <meta name="author" content="">
@@ -52,6 +453,4 @@ class LPDSLGenerator extends AbstractGenerator {
 		
 		</body>
 		</html>
-''');
-	}
-}
+''' */
