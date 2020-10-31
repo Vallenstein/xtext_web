@@ -8,4 +8,7 @@
     <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage"/>
     <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.impl.LPDSLPackageImpl"/>
     <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage.Literals"/>
+    <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.PageHeader"/>
+    <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.Sections"/>
+    <fullyQualifiedTypeName name="org.xtext.example.landingpagedsl.lPDSL.PageBody"/>
 </qualifiedTypeNameHistroy>

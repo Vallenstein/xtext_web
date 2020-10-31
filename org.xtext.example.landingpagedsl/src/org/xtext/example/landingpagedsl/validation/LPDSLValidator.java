@@ -6,11 +6,15 @@ import java.util.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.validation.CheckType;
 import org.xtext.example.landingpagedsl.lPDSL.ImagePath;
 import org.xtext.example.landingpagedsl.lPDSL.LPDSLPackage;
 import org.xtext.example.landingpagedsl.lPDSL.LandingPage;
+import org.xtext.example.landingpagedsl.lPDSL.PageBody;
 import org.xtext.example.landingpagedsl.lPDSL.PageComponent;
+import org.xtext.example.landingpagedsl.lPDSL.PageHeader;
 import org.xtext.example.landingpagedsl.lPDSL.Path;
+import org.xtext.example.landingpagedsl.lPDSL.Sections;
 import org.xtext.example.landingpagedsl.lPDSL.TabItems;
 import java.util.regex.*;
 /**
@@ -20,13 +24,8 @@ import java.util.regex.*;
  */
 public class LPDSLValidator extends AbstractLPDSLValidator {
 	
-//TODO: path in image is correct format path, same for link in link
-	
-	//TODO: all tab names corresponds to a section name
-	public static final String INVALID_NAME = "invalidName";
-	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Check
+	@Check(CheckType.NORMAL)
 	public void tabHasSection (LandingPage page) {
 		List tabNames = new ArrayList();
 		List secNames = new ArrayList();
@@ -60,28 +59,37 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 			}
 		}
 		
-		Set set = new HashSet(tabNames);
-		if(set.size() < tabNames.size()) {
-			error("Tabs must have unique names", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
-		}
-		else {
-			for(var s : tabNames) {
-				if(!secNames.contains(s)) {
-					error("you fucked up, Each Tab has to have a corresponding section!", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
-				}
+		for(var s : tabNames) {
+			if(!secNames.contains(s)) {
+				error("Each Tab has to have a corresponding section with the same name!", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
 			}
-			
 		}
 	}
 	
 	@Check
-	public void tabCapitalLetter(TabItems tab) {
-		if (!Character.isUpperCase(tab.getName().charAt(0))) {
-			warning("Name should start with a capital",
-					LPDSLPackage.Literals.TAB_ITEMS__NAME,
-					INVALID_NAME);
+	public void uniqueTabNames(PageHeader header) {
+		List tabNames = new ArrayList();
+		for(TabItems t : header.getTabs()) {
+			tabNames.add(t.getName());
+		}
+		Set set = new HashSet(tabNames);
+		if(set.size() < tabNames.size()) {
+			error("Tabs must have unique names!", LPDSLPackage.Literals.PAGE_HEADER__TABS);
 		}
 	}
+	
+	@Check
+	public void uniqueSectionNames(PageBody body) {
+		List secNames = new ArrayList();
+		for(Sections s : body.getSections()) {
+			secNames.add(s.getName());
+		}
+		Set set = new HashSet(secNames);
+		if(set.size() < secNames.size()) {
+			error("Sections must have unique names!", LPDSLPackage.Literals.PAGE_BODY__SECTIONS);
+		}
+	}
+	
 	
 	@Check
 	public void checkOnePageBody(LandingPage page) {
@@ -92,7 +100,7 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 			}
 		}
 		if(check > 1) {
-			error("There can only be one body section in your landing page", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
+			error("There can only be one body section in your landing page!", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
 		}
 	}
 	
@@ -105,7 +113,7 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 			}
 		}
 		if(check > 1) {
-			error("There can only be one header section in your landing page", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
+			error("There can only be one header section in your landing page!", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
 		}
 	}
 	
@@ -118,16 +126,16 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 			}
 		}
 		if(check > 1) {
-			error("There can only be one footer section in your landing page", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
+			error("There can only be one footer section in your landing page!", LPDSLPackage.Literals.LANDING_PAGE__PAGECOMPONENT);
 		}
 	}
 	
 	@Check 
 	public void validURL(Path path) {
-		Pattern p = Pattern.compile("^(http:\\/\\/|https:\\/\\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$");
+		Pattern p = Pattern.compile("^(http:\\/\\/|https:\\/\\/)?(www.)([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$");
 		Matcher m = p.matcher(path.getValue());
 		if (!m.matches()){
-			warning("Your URL might not be valid", LPDSLPackage.Literals.PATH__VALUE);
+			warning("Your URL might not be valid!", LPDSLPackage.Literals.PATH__VALUE);
 		}
 		
 				
@@ -138,7 +146,7 @@ public class LPDSLValidator extends AbstractLPDSLValidator {
 		Pattern p = Pattern.compile("([^\\s]+(\\.(?i)(jpg|png|JPG|PNG))$)");
 		Matcher m = p.matcher(path.getValue());
 		if (!m.matches()){
-			warning("Your image path might not be valid", LPDSLPackage.Literals.IMAGE_PATH__VALUE);
+			warning("Your image path might not be valid!", LPDSLPackage.Literals.IMAGE_PATH__VALUE);
 		}
 		
 				
